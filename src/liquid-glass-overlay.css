@@ -1,0 +1,241 @@
+/* Desktop glass drawers. Obsidian 1.14.4 owns saved width, 140ms width
+   animation, child minWidth, display and resize callbacks. No runtime script.
+   Host width becomes travel distance; the root stays in the flex layout. */
+body:not(.is-mobile) .workspace {
+  position: relative;
+}
+/* The left sheet travels behind the ribbon; its toggle stays clickable. */
+body:not(.is-mobile) .workspace > .workspace-ribbon.mod-primary {
+  z-index: calc(var(--layer-sidedock) + 1);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  position: absolute;
+  inset-block-start: var(--header-height);
+  inset-block-end: 0;
+  height: calc(100% - var(--header-height));
+  z-index: var(--layer-sidedock);
+  /* Host writes overflow:hidden during animation. Full-width children must
+     extend beyond that shrinking box; workspace clips them at window edges. */
+  overflow: visible !important;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock {
+  inset-inline-start: var(--ribbon-width);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock {
+  inset-inline-end: 0;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+  opacity: 1;
+  visibility: visible;
+  translate: none;
+  transition: none;
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+/* Full saved minWidth is supplied by the host while width animates.
+   Left edge = animated parent width - full child width. Right children already
+   travel with their right-anchored parent's left edge. No separate easing. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock > .workspace-tabs {
+  inset-inline-start: 100%;
+  translate: -100% 0;
+}
+body.mod-rtl:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock > .workspace-tabs {
+  translate: 100% 0;
+}
+/* Native vault footer is not one of the host's width-frozen tab groups.
+   Reveal it after travel; hide immediately on collapse to avoid squashed text. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile {
+  opacity: 1;
+  transition: opacity 70ms ease-out var(--plp-lg-time-panel);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-sidedock-vault-profile {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+@starting-style {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-sidedock-vault-profile { opacity: 0; }
+}
+/* Host reparents/clones toggle buttons between top tab groups. Take them out
+   of tab flow so that migration cannot stretch the main tab row. */
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button {
+  position: absolute;
+  inset-block-start: 0;
+  margin-inline-start: 0 !important;
+  width: auto !important;
+  z-index: 1;
+}
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button.mod-left {
+  inset-inline-start: var(--size-4-2) !important;
+}
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button.mod-right {
+  inset-inline-end: calc(var(--size-4-2) + var(--frame-right-space, 0px));
+}
+/* Keep frame/button reservation constant when host moves mod-top-*-space
+   classes on open/close. Also reserve the toggle's hit region. */
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container {
+  padding-inline-start: calc(var(--size-4-2) + max(30px, var(--frame-left-space, 0px)));
+  padding-inline-end: calc(var(--size-4-2) + 30px + var(--frame-right-space, 0px));
+}
+/* Electron drag-region exclusion must stay on the main top row even when
+   the host moves mod-top-*-space to an open drawer below that row. Z-index and
+   DOM hit tests alone do not exclude native window dragging behind the X. */
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::before,
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::before {
+  left: 0;
+  width: var(--frame-left-space, 0px);
+}
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::after {
+  right: 0;
+  width: var(--frame-right-space, 0px);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-left) {
+  padding-inline-start: 38px;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-right) {
+  padding-inline-end: calc(38px + var(--frame-right-space, 0px));
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+    background-color: var(--plp-lg-panel-fallback);
+    background-image: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile,
+body.is-grabbing:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile { transition: none; }
+  /* Native JS still drives 140ms travel; CSS adds no separate motion. */
+}
+
+/* Sidedock tabs now sit BELOW the window/title tab row. Its native frame
+   reservations and pseudo hit regions no longer belong on utility tabs. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container {
+  padding-inline-start: var(--tab-container-padding-start);
+  padding-inline-end: var(--tab-container-padding-end);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container::before,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container::after {
+  display: none;
+  pointer-events: none;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-left) { padding-inline-start: 38px; }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-right) { padding-inline-end: 38px; }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container > .sidebar-toggle-button.mod-right { inset-inline-end: var(--size-4-2); }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header-container-inner,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header-inner {
+  -webkit-app-region: no-drag;
+}
+/* Center stays clear. Only a three-pixel inner edge softly scatters light.
+   Decorative layers never intercept search tabs, actions, handles or text. */
+.theme-light:not(.is-mobile) {
+  --plp-lg-glass-glint: rgba(255, 255, 255, .24);
+  --plp-lg-glass-rim: rgba(255, 255, 255, .54);
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-glass-glint: rgba(255, 250, 253, .14);
+  --plp-lg-glass-rim: rgba(255, 250, 253, .30);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 42%, var(--plp-lg-glass-glint) 49%, transparent 56%);
+  opacity: 0;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-tabs::before {
+  animation: plp-lg-glass-arrive 420ms cubic-bezier(.16, .8, .24, 1) both;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-tabs::before {
+  animation: plp-lg-glass-depart 140ms ease-in both;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock > .workspace-tabs::before { scale: -1 1; }
+@keyframes plp-lg-glass-arrive {
+  0% { translate: -70% 0; opacity: 0; }
+  25% { opacity: .65; }
+  100% { translate: 70% 0; opacity: 0; }
+}
+@keyframes plp-lg-glass-depart {
+  0% { translate: 35% 0; opacity: 0; }
+  35% { opacity: .45; }
+  100% { translate: -65% 0; opacity: 0; }
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 3px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, var(--plp-lg-glass-rim) 28%, transparent 65%, var(--plp-lg-glass-rim));
+  backdrop-filter: blur(.75px) brightness(1.05);
+  opacity: .45;
+  transition: opacity 180ms ease;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock > .workspace-tabs::after { inset-inline-end: auto; inset-inline-start: 0; }
+@media (hover: hover) {
+  body:not(.is-mobile):not(.is-grabbing) .workspace > .workspace-split.mod-sidedock > .workspace-tabs:hover::after { opacity: .85; }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before,
+body.is-grabbing:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before { animation: none; opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:is(.is-sidedock-collapsed, :not(.is-sidedock-collapsed)) > .workspace-tabs::before { animation: none; opacity: 0; }
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after { transition: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before,
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after { display: none; }
+}
+
+/* Native tab drag paints a large accent-colored drop rectangle, plus optional
+   highlighted leaf/header fills. Use near-background white for these areas;
+   keep text selection, semantic accents and file-tree drop indicators intact. */
+.theme-light:not(.is-mobile) {
+  --plp-lg-drop-surface: rgba(255, 255, 255, .38);
+  --plp-lg-drop-edge: rgba(95, 80, 103, .16);
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-drop-surface: rgba(255, 250, 253, .035);
+  --plp-lg-drop-edge: rgba(255, 250, 253, .16);
+}
+body:not(.is-mobile) .workspace-drop-overlay::before {
+  background-color: var(--plp-lg-drop-surface);
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px var(--plp-lg-drop-edge);
+}
+body:not(.is-mobile) .workspace .workspace-leaf.is-highlighted::before,
+body:not(.is-mobile) .workspace .view-header.is-highlighted::after {
+  background-color: var(--plp-lg-drop-surface);
+}
+body:not(.is-mobile) .drag-ghost.mod-leaf {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .10), inset 0 0 0 1px var(--plp-lg-drop-edge);
+}

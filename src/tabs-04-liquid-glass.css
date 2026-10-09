@@ -1,0 +1,142 @@
+/* PLP Liquid Glass tabs — requires obsidian-liquid-glass-foundation.
+   Horizontal main-editor tabs only; stacked/sidebar tabs retain native geometry.
+   Scope specificity deliberately beats the legacy palette tab rules.
+   No scripts, continuous animations, or cross-tab sliding indicator. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+  gap: var(--plp-lg-tab-gap);
+  align-items: center;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  position: relative;
+  box-sizing: border-box;
+  height: var(--plp-lg-tab-height);
+  min-height: var(--plp-lg-tab-height);
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--plp-lg-radius-interactive);
+  background: transparent;
+  box-shadow: none;
+  color: var(--plp-lg-text-muted);
+  isolation: isolate;
+  transform-origin: center;
+  transition:
+    transform var(--plp-lg-time-release) var(--plp-lg-ease-release),
+    background-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    border-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    box-shadow var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    color var(--plp-lg-time-fast) ease;
+}
+/* Obsidian draws curved tails with these pseudo-elements. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::after {
+  display: none !important;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  border-radius: inherit;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-title {
+  color: inherit;
+}
+/* Stable gradient; hover only animates a color tint and sheen opacity. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover {
+  background-color: var(--plp-lg-subtle);
+  border-color: var(--plp-lg-rim-low);
+  color: var(--plp-lg-text);
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  background-color: var(--plp-lg-fallback);
+  background-image: var(--plp-lg-interactive);
+  border-color: var(--plp-lg-rim);
+  box-shadow: var(--plp-lg-shadow);
+  color: var(--plp-lg-text);
+  z-index: 2;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-interactive)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-interactive)) saturate(var(--plp-lg-saturation));
+  }
+}
+/* Positive layer ordering keeps the sheen visible, below text and controls. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--plp-lg-sheen);
+  opacity: .58;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity var(--plp-lg-time-state) ease;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner > * {
+  position: relative;
+  z-index: 1;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+  box-shadow: var(--plp-lg-shadow-hover);
+}
+/* Keep the opaque fallback intact on hover when blur is unavailable. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+    background-color: var(--plp-lg-hover-tint);
+  }
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover .workspace-tab-header-inner::before {
+  opacity: .78;
+}
+/* Both inactive and selected+hovered tabs must receive the pressed shadow. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:active,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:active,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover:active {
+  transform: scale(var(--plp-lg-press-scale));
+  box-shadow: var(--plp-lg-shadow-press);
+  transition-duration: var(--plp-lg-time-press);
+  transition-timing-function: ease-out;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-visible,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-within {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 2px;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button {
+  opacity: 0;
+  pointer-events: none;
+  border-radius: var(--plp-lg-radius-control);
+  transition: opacity var(--plp-lg-time-fast) ease,
+    background-color var(--plp-lg-time-fast) ease;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-within .workspace-tab-header-inner-close-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button:hover {
+  background-color: var(--plp-lg-hover-tint);
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 1px;
+}
+/* Touch has no persistent hover; keep the native close target visible. */
+@media (hover: none) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner::before {
+    transition: none;
+  }
+}

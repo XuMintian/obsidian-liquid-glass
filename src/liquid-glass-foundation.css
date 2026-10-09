@@ -1,0 +1,135 @@
+/* PLP Liquid Glass foundation — shared materials and motion.
+   Required by tabs, chrome, navigation and motion snippets.
+   No font or editor geometry reset. Floating overlays remain a later phase. */
+.theme-light, .theme-dark {
+  --plp-lg-blur-interactive: 16px;
+  --plp-lg-saturation: 150%;
+  --plp-lg-radius-control: 6px;
+  --plp-lg-radius-interactive: 9px;
+  --plp-lg-radius-floating: 16px;
+  --plp-lg-time-fast: 150ms;
+  --plp-lg-time-state: 220ms;
+  --plp-lg-time-release: 340ms;
+  --plp-lg-time-press: 85ms;
+  --plp-lg-ease-state: cubic-bezier(.2, .7, .3, 1);
+  --plp-lg-ease-release: cubic-bezier(.2, 1.6, .42, 1);
+  --plp-lg-press-scale: .97;
+  --plp-lg-tab-height: 36px;
+  --plp-lg-tab-gap: 6px;
+}
+.theme-light {
+  --plp-lg-accent: #E02C91;
+  --plp-lg-text: #46115C;
+  --plp-lg-text-muted: rgba(70, 17, 92, .72);
+  --plp-lg-selection: rgba(255, 255, 102, .30);
+  --plp-lg-subtle: rgba(248, 226, 243, .30);
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 255, 255, .88) 0%, rgba(255, 246, 251, .74) 39%,
+    rgba(241, 222, 248, .50) 74%, rgba(255, 255, 255, .76) 100%);
+  --plp-lg-floating: linear-gradient(145deg, rgba(255, 250, 253, .96), rgba(248, 236, 252, .90));
+  --plp-lg-fallback: #FFF5FC;
+  --plp-lg-hover-tint: rgba(224, 44, 145, .07);
+  --plp-lg-rim: rgba(255, 255, 255, .96);
+  --plp-lg-rim-low: rgba(224, 44, 145, .18);
+  --plp-lg-shadow: 0 5px 14px rgba(70, 17, 92, .12),
+    0 2px 4px rgba(224, 44, 145, .06),
+    inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 -1px 0 rgba(224, 44, 145, .10);
+  --plp-lg-shadow-hover: 0 8px 20px rgba(70, 17, 92, .15),
+    0 3px 7px rgba(224, 44, 145, .09),
+    inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(224, 44, 145, .10);
+  --plp-lg-shadow-press: 0 2px 6px rgba(70, 17, 92, .11),
+    0 1px 2px rgba(224, 44, 145, .04),
+    inset 0 2px 5px rgba(70, 17, 92, .08), inset 0 -1px 0 rgba(224, 44, 145, .06);
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .67),
+    rgba(255, 255, 255, .07) 32%, transparent 58%, rgba(255, 255, 255, .19));
+}
+.theme-dark {
+  --plp-lg-accent: #FF2E95;
+  --plp-lg-text: #FFE6EE;
+  --plp-lg-text-muted: rgba(255, 230, 238, .74);
+  --plp-lg-selection: rgba(255, 255, 102, .40);
+  --plp-lg-subtle: rgba(255, 147, 204, .09);
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 232, 250, .42) 0%, rgba(215, 141, 233, .27) 30%,
+    rgba(255, 46, 149, .29) 60%, rgba(122, 51, 149, .32) 82%, rgba(255, 206, 241, .32) 100%);
+  --plp-lg-floating: linear-gradient(145deg, rgba(48, 15, 55, .95), rgba(35, 7, 48, .92));
+  --plp-lg-fallback: #32102F;
+  --plp-lg-hover-tint: rgba(255, 46, 149, .10);
+  --plp-lg-rim: rgba(255, 221, 246, .78);
+  --plp-lg-rim-low: rgba(255, 46, 149, .27);
+  --plp-lg-shadow: 0 6px 18px rgba(0, 0, 0, .36),
+    0 2px 10px rgba(255, 46, 149, .12),
+    inset 0 1px 0 rgba(255, 239, 250, .66), inset 0 -1px 0 rgba(255, 46, 149, .11);
+  --plp-lg-shadow-hover: 0 8px 22px rgba(0, 0, 0, .43),
+    0 3px 14px rgba(255, 46, 149, .20),
+    inset 0 1px 0 rgba(255, 239, 250, .78), inset 0 -1px 0 rgba(255, 46, 149, .11);
+  --plp-lg-shadow-press: 0 2px 7px rgba(0, 0, 0, .32),
+    0 1px 3px rgba(255, 46, 149, .07),
+    inset 0 2px 6px rgba(0, 0, 0, .24), inset 0 -1px 0 rgba(255, 46, 149, .07);
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .48),
+    rgba(255, 184, 225, .055) 32%, transparent 60%, rgba(255, 150, 206, .12));
+}
+/* Native text selection and CodeMirror's drawn selection layer.
+   Markdown ==highlight== and --text-highlight-bg are intentionally separate. */
+.markdown-source-view.mod-cm6 .cm-content ::selection,
+.markdown-source-view.mod-cm6 .cm-content::selection,
+.markdown-preview-view ::selection {
+  background-color: var(--plp-lg-selection);
+}
+.markdown-source-view.mod-cm6 .cm-editor .cm-selectionBackground {
+  /* CodeMirror injects focused selection colors with its own selector weights. */
+  background-color: var(--plp-lg-selection) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-light, .theme-dark {
+    --plp-lg-time-fast: 0ms;
+    --plp-lg-time-state: 0ms;
+    --plp-lg-time-release: 0ms;
+    --plp-lg-time-press: 0ms;
+    --plp-lg-press-scale: 1;
+  }
+}
+
+/* Main-interface materials. Keep reading surfaces on --background-primary. */
+.theme-light, .theme-dark {
+  --plp-lg-time-panel: 140ms; /* Native Obsidian 1.14.4 sidedock width animation. */
+  --plp-lg-panel-travel: 10px;
+  --plp-lg-scale-control: .94;
+  --plp-lg-scale-row: .99;
+  --plp-lg-blur-panel: 16px;
+  --plp-lg-blur-status: 8px;
+}
+.theme-light {
+  --plp-lg-ambient: radial-gradient(ellipse at 5% 16%, rgba(224, 44, 145, .07), transparent 55%),
+    radial-gradient(ellipse at 96% 78%, rgba(136, 74, 190, .08), transparent 55%);
+  --plp-lg-panel: linear-gradient(155deg, rgba(255, 255, 255, .76), rgba(255, 248, 253, .61) 50%, rgba(241, 230, 250, .63));
+  --plp-lg-panel-fallback: #FFF7FD;
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 255, 255, .88), rgba(246, 235, 251, .61), rgba(255, 246, 251, .77));
+  --plp-lg-edge: rgba(123, 56, 140, .18);
+  --plp-lg-panel-shadow: inset 1px 0 0 rgba(255, 255, 255, .90), inset -1px 0 0 rgba(123, 56, 140, .16), inset 0 1px 0 rgba(255, 255, 255, .85);
+  --plp-lg-control: rgba(255, 250, 253, .44);
+  --plp-lg-control-shadow: 0 2px 5px rgba(70, 17, 92, .06), inset 0 1px 0 rgba(255, 255, 255, .80);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 255, 255, .80), rgba(243, 217, 241, .64), rgba(253, 238, 249, .82));
+  --plp-lg-row-shadow: inset 0 1px 0 rgba(255, 255, 255, .96), inset 0 -1px 0 rgba(224, 44, 145, .15), 0 2px 5px rgba(70, 17, 92, .08);
+}
+.theme-dark {
+  --plp-lg-ambient: radial-gradient(ellipse at 6% 14%, rgba(255, 46, 149, .15), transparent 58%),
+    radial-gradient(ellipse at 95% 75%, rgba(157, 99, 223, .20), transparent 58%);
+  --plp-lg-panel: linear-gradient(155deg, rgba(92, 57, 100, .64), rgba(42, 12, 53, .72) 48%, rgba(70, 24, 87, .62));
+  --plp-lg-panel-fallback: #26102F;
+  --plp-lg-chrome: linear-gradient(115deg, rgba(87, 46, 92, .75), rgba(35, 11, 48, .86), rgba(82, 36, 88, .70));
+  --plp-lg-edge: rgba(255, 193, 234, .23);
+  --plp-lg-panel-shadow: inset 1px 0 0 rgba(255, 232, 248, .24), inset -1px 0 0 rgba(229, 149, 223, .23), inset 0 1px 0 rgba(255, 232, 248, .25);
+  --plp-lg-control: rgba(255, 221, 245, .08);
+  --plp-lg-control-shadow: 0 2px 6px rgba(0, 0, 0, .20), inset 0 1px 0 rgba(255, 234, 249, .19);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 221, 247, .21), rgba(221, 82, 173, .24), rgba(177, 104, 210, .21));
+  --plp-lg-row-shadow: inset 0 1px 0 rgba(255, 235, 251, .40), inset 0 -1px 0 rgba(255, 46, 149, .23), 0 2px 6px rgba(0, 0, 0, .18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-light, .theme-dark {
+    --plp-lg-time-panel: 0ms;
+    --plp-lg-panel-travel: 0px;
+    --plp-lg-scale-control: 1;
+    --plp-lg-scale-row: 1;
+  }
+}

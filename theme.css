@@ -1,0 +1,1376 @@
+/* Obsidian Liquid Glass 0.1.0 | Copyright 2026 XuMintian | MIT License
+   Generated from src/ via node build.mjs. */
+
+/* Module: src/theme-light-dark-updated.css */
+/* Obsidian unified theme: light + dark */
+/* Light: #FFFAFD background, #46115C text; Dark: #0D0014 background, #FFFAFD text, #FF2E95 accent */
+
+/* ========== LIGHT MODE ========== */
+.theme-light {
+  --background-primary: #FFFAFD;
+  --background-secondary: #FFFAFD;
+  --background-primary-alt: #FFFAFD;
+  --background-secondary-alt: #FFFAFD;
+  --titlebar-background: #FFFAFD;
+  --titlebar-background-focused: #FFFAFD;
+  --tab-container-background: #FFFAFD;
+  --text-normal: #46115C;
+  --text-muted: #46115C;
+  --text-faint: #46115C;
+  --interactive-accent: #E02C91;
+  --interactive-accent-hover: #C5227B;
+  --text-accent: #E02C91;
+  --text-accent-hover: #C5227B;
+  --color-accent: #E02C91;
+  --h1-color: #46115C;
+  --h2-color: #64277B;
+  --h3-color: #824394;
+  --h4-color: #A061AD;
+  --h5-color: #B781C0;
+  --h6-color: #CBA0D0;
+  --link-color: #D12B7F;
+  --link-color-hover: #D12B7F;
+  --link-external-color: #D12B7F;
+  --link-external-color-hover: #D12B7F;
+  --link-unresolved-color: #D12B7F;
+  --bold-color: #E02C91;
+  --italic-color: #E02C91;
+  --text-highlight-bg: #FFF0C2;
+  --blockquote-border-color: #E02C91;
+  --hr-color: #E02C91;
+  --table-border-color: #E02C9170;
+  --background-modifier-hover: #E02C9114;
+  --background-modifier-border: #E02C9138;
+  --background-modifier-border-hover: #E02C9170;
+  --background-modifier-border-focus: #E02C91;
+  --checkbox-color: #E02C91;
+  --checkbox-color-hover: #E02C91;
+  --checkbox-border-color: #E02C91;
+  --list-marker-color: #E02C91;
+  --list-marker-color-hover: #E02C91;
+  --list-marker-color-collapsed: #E02C91;
+  --text-selection: var(--plp-lg-selection, rgba(255, 255, 102, .30));
+  --icon-color: #46115C;
+  --icon-color-hover: #E02C91;
+  --icon-color-active: #E02C91;
+  --icon-color-focused: #E02C91;
+}
+
+/* ========== DARK MODE ========== */
+.theme-dark {
+  --background-primary: #0D0014;
+  --background-secondary: #0D0014;
+  --background-primary-alt: #0D0014;
+  --background-secondary-alt: #0D0014;
+  --titlebar-background: #0D0014;
+  --titlebar-background-focused: #0D0014;
+  --tab-container-background: #0D0014;
+  --text-normal: #FFFAFD;
+  --text-muted: #FFFAFD;
+  --text-faint: #FFFAFD;
+  /* Lightened headings for visibility against the deep-purple background */
+  --interactive-accent: #FF2E95;
+  --interactive-accent-hover: #FF65B8;
+  --text-accent: #FF2E95;
+  --text-accent-hover: #FF65B8;
+  --color-accent: #FF2E95;
+  --h1-color: #FFFAFD;
+  --h2-color: #FCE4F5;
+  --h3-color: #F8C9EB;
+  --h4-color: #F4AFE0;
+  --h5-color: #ED91D0;
+  --h6-color: #E67BBD;
+  /* Vivid dark-mode accent; lighter hover state */
+  --link-color: #FF2E95;
+  --link-color-hover: #FF65B8;
+  --link-external-color: #FF2E95;
+  --link-external-color-hover: #FF65B8;
+  --link-unresolved-color: #FF2E95;
+  --bold-color: #FF2E95;
+  --italic-color: #FF2E95;
+  --text-highlight-bg: #FF2E9559;
+  --blockquote-border-color: #FF2E95;
+  --hr-color: #FF2E95;
+  --table-border-color: #FF2E9580;
+  --background-modifier-hover: #FF2E9529;
+  --background-modifier-border: #FF2E9552;
+  --background-modifier-border-hover: #FF2E958A;
+  --background-modifier-border-focus: #FF2E95;
+  --checkbox-color: #FF2E95;
+  --checkbox-color-hover: #FF2E95;
+  --checkbox-border-color: #FF2E95;
+  --list-marker-color: #FF2E95;
+  --list-marker-color-hover: #FF2E95;
+  --list-marker-color-collapsed: #FF2E95;
+  --text-selection: var(--plp-lg-selection, rgba(255, 255, 102, .40));
+  --icon-color: #FFFAFD;
+  --icon-color-hover: #FF2E95;
+  --icon-color-active: #FF2E95;
+  --icon-color-focused: #FF2E95;
+}
+
+/* ========== SHARED DETAIL RULES ========== */
+.theme-light :not(pre) > code,
+.theme-light .cm-inline-code {
+  background-color: #FFFAFD;
+}
+.theme-dark :not(pre) > code,
+.theme-dark .cm-inline-code {
+  background-color: #FF2E9520;
+}
+.theme-light .markdown-rendered pre,
+.theme-light .HyperMD-codeblock {
+  background-color: #FF00990C !important;
+}
+.theme-dark .markdown-rendered pre,
+.theme-dark .HyperMD-codeblock {
+  background-color: #FF2E951A !important;
+}
+.theme-light .markdown-rendered blockquote {
+  border-left-color: #E02C91;
+}
+.theme-dark .markdown-rendered blockquote {
+  border-left-color: #FF2E95;
+}
+.theme-light .markdown-rendered hr {
+  border-color: #E02C91;
+}
+.theme-dark .markdown-rendered hr {
+  border-color: #FF2E95;
+}
+.theme-light .markdown-rendered ol > li::marker {
+  color: #E02C91;
+}
+.theme-dark .markdown-rendered ol > li::marker {
+  color: #FF2E95;
+}
+.theme-light .cm-formatting-list-ol {
+  color: #E02C91 !important;
+}
+.theme-dark .cm-formatting-list-ol {
+  color: #FF2E95 !important;
+}
+.theme-light .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 #E02C91;
+}
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 #FF2E95;
+}
+.theme-light .workspace-tab-header.is-active { background-color: #FFFAFD; }
+.theme-dark .workspace-tab-header.is-active { background-color: #0D0014; }
+.theme-light .workspace-tab-header.is-active .workspace-tab-header-inner-title { color: #46115C; }
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-title { color: #FFFAFD; }
+.theme-light .nav-file-title.is-active { background-color: #E02C9126; }
+.theme-dark .nav-file-title.is-active { background-color: #FF2E9526; }
+.theme-light .nav-file-title.is-active { color: #46115C; }
+.theme-dark .nav-file-title.is-active { color: #FFFAFD; }
+.theme-light .nav-folder-title-content,
+.theme-light .nav-folder-collapse-indicator { color: #E02C91; }
+.theme-dark .nav-folder-title-content,
+.theme-dark .nav-folder-collapse-indicator { color: #FF2E95; }
+.theme-light ::-webkit-scrollbar-thumb {
+  background-color: #E02C9170;
+  border-radius: 8px;
+}
+.theme-dark ::-webkit-scrollbar-thumb {
+  background-color: #FF2E9570;
+  border-radius: 8px;
+}
+.theme-light ::-webkit-scrollbar-thumb:hover { background-color: #E02C91A0; }
+.theme-dark ::-webkit-scrollbar-thumb:hover { background-color: #FF2E95A0; }
+.theme-light ::-webkit-scrollbar-track { background-color: #FFFAFD; }
+.theme-dark ::-webkit-scrollbar-track { background-color: #0D0014; }
+.theme-light .cm-editor .cm-content { caret-color: #E02C91; }
+.theme-dark .cm-editor .cm-content { caret-color: #FF2E95; }
+.theme-light .cm-editor .cm-cursor { border-left-color: #E02C91 !important; }
+.theme-dark .cm-editor .cm-cursor { border-left-color: #FF2E95 !important; }
+
+
+/* Module: src/typography.css */
+/* Reading rhythm. Font families follow the user's Obsidian settings. */
+/* Independent snippet: does not change your light/dark palette. */
+.theme-light, .theme-dark {
+  --line-height-normal: 1.8;
+  --line-height-tight: 1.35;
+}
+/* Editing and reading text */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view .markdown-preview-sizer {
+  font-family: var(--font-text);
+  line-height: 1.8;
+}
+/* Headings in both modes */
+.markdown-rendered :is(h1,h2,h3,h4,h5,h6),
+.markdown-source-view.mod-cm6 :is(.HyperMD-header-1,.HyperMD-header-2,.HyperMD-header-3,.HyperMD-header-4,.HyperMD-header-5,.HyperMD-header-6) {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: .015em;
+  line-height: 1.45;
+}
+.markdown-rendered h1 { margin-block: 1.35em .65em; }
+.markdown-rendered h2 { margin-block: 1.25em .55em; }
+.markdown-rendered :is(h3,h4,h5,h6) { margin-block: 1.1em .45em; }
+.markdown-rendered p { margin-block: .7em; }
+/* Make code genuinely monospaced, regardless of settings. */
+.markdown-rendered :is(code,pre),
+.markdown-source-view.mod-cm6 :is(.cm-inline-code,.HyperMD-codeblock),
+.markdown-rendered pre code {
+  font-family: var(--font-monospace);
+  font-size: .92em;
+}
+
+
+/* Module: src/layout-02-balanced.css */
+/* 02 — Balanced, responsive writing area for Obsidian
+   Inspired by the centered, controlled line lengths of Markdown editors.
+   Replaces the earlier left-aligned layout snippet.
+   Does not alter colors, fonts, font sizes, or line spacing.
+*/
+
+.theme-light,
+.theme-dark {
+  /* Total maximum editor width, including the inner horizontal padding. */
+  --obs-layout-width: 1040px;
+
+  /* Responsive inner gutters: never less than 18px or more than 36px. */
+  --obs-layout-gutter: clamp(18px, 2.5vw, 36px);
+
+  /* Keep Obsidian's readable-line-length mechanism in sync. */
+  --file-line-width: var(--obs-layout-width);
+
+  /* Prevent native file padding from stacking with our explicit padding. */
+  --file-margins: 0px;
+}
+
+/* Live Preview / Source editor and Reading View use the same geometry. */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: var(--obs-layout-width) !important;
+
+  /* CENTER the writing area: don't leave all extra space on the right. */
+  margin-inline: auto !important;
+  transform: none !important;
+
+  /* A single, predictable layer of padding. */
+  padding-top: 40px !important;
+  padding-inline: var(--obs-layout-gutter) !important;
+  padding-bottom: 56px !important;
+}
+
+/* In very narrow Obsidian windows, preserve usable writing space. */
+@media (max-width: 700px) {
+  .theme-light,
+  .theme-dark {
+    --obs-layout-gutter: 16px;
+  }
+}
+
+
+/* Module: src/tabs-04-liquid-glass.css */
+/* PLP Liquid Glass tabs — requires obsidian-liquid-glass-foundation.
+   Horizontal main-editor tabs only; stacked/sidebar tabs retain native geometry.
+   Scope specificity deliberately beats the legacy palette tab rules.
+   No scripts, continuous animations, or cross-tab sliding indicator. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+  gap: var(--plp-lg-tab-gap);
+  align-items: center;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  position: relative;
+  box-sizing: border-box;
+  height: var(--plp-lg-tab-height);
+  min-height: var(--plp-lg-tab-height);
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: var(--plp-lg-radius-interactive);
+  background: transparent;
+  box-shadow: none;
+  color: var(--plp-lg-text-muted);
+  isolation: isolate;
+  transform-origin: center;
+  transition:
+    transform var(--plp-lg-time-release) var(--plp-lg-ease-release),
+    background-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    border-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    box-shadow var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    color var(--plp-lg-time-fast) ease;
+}
+/* Obsidian draws curved tails with these pseudo-elements. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::before,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header::after {
+  display: none !important;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  border-radius: inherit;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-title {
+  color: inherit;
+}
+/* Stable gradient; hover only animates a color tint and sheen opacity. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:not(.is-active):hover {
+  background-color: var(--plp-lg-subtle);
+  border-color: var(--plp-lg-rim-low);
+  color: var(--plp-lg-text);
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+  background-color: var(--plp-lg-fallback);
+  background-image: var(--plp-lg-interactive);
+  border-color: var(--plp-lg-rim);
+  box-shadow: var(--plp-lg-shadow);
+  color: var(--plp-lg-text);
+  z-index: 2;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-interactive)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-interactive)) saturate(var(--plp-lg-saturation));
+  }
+}
+/* Positive layer ordering keeps the sheen visible, below text and controls. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--plp-lg-sheen);
+  opacity: .58;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity var(--plp-lg-time-state) ease;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner > * {
+  position: relative;
+  z-index: 1;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+  box-shadow: var(--plp-lg-shadow-hover);
+}
+/* Keep the opaque fallback intact on hover when blur is unavailable. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+    background-color: var(--plp-lg-hover-tint);
+  }
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover .workspace-tab-header-inner::before {
+  opacity: .78;
+}
+/* Both inactive and selected+hovered tabs must receive the pressed shadow. */
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:active,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:active,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover:active {
+  transform: scale(var(--plp-lg-press-scale));
+  box-shadow: var(--plp-lg-shadow-press);
+  transition-duration: var(--plp-lg-time-press);
+  transition-timing-function: ease-out;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-visible,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-within {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 2px;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button {
+  opacity: 0;
+  pointer-events: none;
+  border-radius: var(--plp-lg-radius-control);
+  transition: opacity var(--plp-lg-time-fast) ease,
+    background-color var(--plp-lg-time-fast) ease;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:focus-within .workspace-tab-header-inner-close-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button:hover {
+  background-color: var(--plp-lg-hover-tint);
+}
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 1px;
+}
+/* Touch has no persistent hover; keep the native close target visible. */
+@media (hover: none) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner::before {
+    transition: none;
+  }
+}
+
+
+/* Module: src/liquid-glass-foundation.css */
+/* PLP Liquid Glass foundation — shared materials and motion.
+   Required by tabs, chrome, navigation and motion snippets.
+   No font or editor geometry reset. Floating overlays remain a later phase. */
+.theme-light, .theme-dark {
+  --plp-lg-blur-interactive: 16px;
+  --plp-lg-saturation: 150%;
+  --plp-lg-radius-control: 6px;
+  --plp-lg-radius-interactive: 9px;
+  --plp-lg-radius-floating: 16px;
+  --plp-lg-time-fast: 150ms;
+  --plp-lg-time-state: 220ms;
+  --plp-lg-time-release: 340ms;
+  --plp-lg-time-press: 85ms;
+  --plp-lg-ease-state: cubic-bezier(.2, .7, .3, 1);
+  --plp-lg-ease-release: cubic-bezier(.2, 1.6, .42, 1);
+  --plp-lg-press-scale: .97;
+  --plp-lg-tab-height: 36px;
+  --plp-lg-tab-gap: 6px;
+}
+.theme-light {
+  --plp-lg-accent: #E02C91;
+  --plp-lg-text: #46115C;
+  --plp-lg-text-muted: rgba(70, 17, 92, .72);
+  --plp-lg-selection: rgba(255, 255, 102, .30);
+  --plp-lg-subtle: rgba(248, 226, 243, .30);
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 255, 255, .88) 0%, rgba(255, 246, 251, .74) 39%,
+    rgba(241, 222, 248, .50) 74%, rgba(255, 255, 255, .76) 100%);
+  --plp-lg-floating: linear-gradient(145deg, rgba(255, 250, 253, .96), rgba(248, 236, 252, .90));
+  --plp-lg-fallback: #FFF5FC;
+  --plp-lg-hover-tint: rgba(224, 44, 145, .07);
+  --plp-lg-rim: rgba(255, 255, 255, .96);
+  --plp-lg-rim-low: rgba(224, 44, 145, .18);
+  --plp-lg-shadow: 0 5px 14px rgba(70, 17, 92, .12),
+    0 2px 4px rgba(224, 44, 145, .06),
+    inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 -1px 0 rgba(224, 44, 145, .10);
+  --plp-lg-shadow-hover: 0 8px 20px rgba(70, 17, 92, .15),
+    0 3px 7px rgba(224, 44, 145, .09),
+    inset 0 1px 0 rgba(255, 255, 255, 1), inset 0 -1px 0 rgba(224, 44, 145, .10);
+  --plp-lg-shadow-press: 0 2px 6px rgba(70, 17, 92, .11),
+    0 1px 2px rgba(224, 44, 145, .04),
+    inset 0 2px 5px rgba(70, 17, 92, .08), inset 0 -1px 0 rgba(224, 44, 145, .06);
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .67),
+    rgba(255, 255, 255, .07) 32%, transparent 58%, rgba(255, 255, 255, .19));
+}
+.theme-dark {
+  --plp-lg-accent: #FF2E95;
+  --plp-lg-text: #FFE6EE;
+  --plp-lg-text-muted: rgba(255, 230, 238, .74);
+  --plp-lg-selection: rgba(255, 255, 102, .40);
+  --plp-lg-subtle: rgba(255, 147, 204, .09);
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 232, 250, .42) 0%, rgba(215, 141, 233, .27) 30%,
+    rgba(255, 46, 149, .29) 60%, rgba(122, 51, 149, .32) 82%, rgba(255, 206, 241, .32) 100%);
+  --plp-lg-floating: linear-gradient(145deg, rgba(48, 15, 55, .95), rgba(35, 7, 48, .92));
+  --plp-lg-fallback: #32102F;
+  --plp-lg-hover-tint: rgba(255, 46, 149, .10);
+  --plp-lg-rim: rgba(255, 221, 246, .78);
+  --plp-lg-rim-low: rgba(255, 46, 149, .27);
+  --plp-lg-shadow: 0 6px 18px rgba(0, 0, 0, .36),
+    0 2px 10px rgba(255, 46, 149, .12),
+    inset 0 1px 0 rgba(255, 239, 250, .66), inset 0 -1px 0 rgba(255, 46, 149, .11);
+  --plp-lg-shadow-hover: 0 8px 22px rgba(0, 0, 0, .43),
+    0 3px 14px rgba(255, 46, 149, .20),
+    inset 0 1px 0 rgba(255, 239, 250, .78), inset 0 -1px 0 rgba(255, 46, 149, .11);
+  --plp-lg-shadow-press: 0 2px 7px rgba(0, 0, 0, .32),
+    0 1px 3px rgba(255, 46, 149, .07),
+    inset 0 2px 6px rgba(0, 0, 0, .24), inset 0 -1px 0 rgba(255, 46, 149, .07);
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .48),
+    rgba(255, 184, 225, .055) 32%, transparent 60%, rgba(255, 150, 206, .12));
+}
+/* Native text selection and CodeMirror's drawn selection layer.
+   Markdown ==highlight== and --text-highlight-bg are intentionally separate. */
+.markdown-source-view.mod-cm6 .cm-content ::selection,
+.markdown-source-view.mod-cm6 .cm-content::selection,
+.markdown-preview-view ::selection {
+  background-color: var(--plp-lg-selection);
+}
+.markdown-source-view.mod-cm6 .cm-editor .cm-selectionBackground {
+  /* CodeMirror injects focused selection colors with its own selector weights. */
+  background-color: var(--plp-lg-selection) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-light, .theme-dark {
+    --plp-lg-time-fast: 0ms;
+    --plp-lg-time-state: 0ms;
+    --plp-lg-time-release: 0ms;
+    --plp-lg-time-press: 0ms;
+    --plp-lg-press-scale: 1;
+  }
+}
+
+/* Main-interface materials. Keep reading surfaces on --background-primary. */
+.theme-light, .theme-dark {
+  --plp-lg-time-panel: 140ms; /* Native Obsidian 1.14.4 sidedock width animation. */
+  --plp-lg-panel-travel: 10px;
+  --plp-lg-scale-control: .94;
+  --plp-lg-scale-row: .99;
+  --plp-lg-blur-panel: 16px;
+  --plp-lg-blur-status: 8px;
+}
+.theme-light {
+  --plp-lg-ambient: radial-gradient(ellipse at 5% 16%, rgba(224, 44, 145, .07), transparent 55%),
+    radial-gradient(ellipse at 96% 78%, rgba(136, 74, 190, .08), transparent 55%);
+  --plp-lg-panel: linear-gradient(155deg, rgba(255, 255, 255, .76), rgba(255, 248, 253, .61) 50%, rgba(241, 230, 250, .63));
+  --plp-lg-panel-fallback: #FFF7FD;
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 255, 255, .88), rgba(246, 235, 251, .61), rgba(255, 246, 251, .77));
+  --plp-lg-edge: rgba(123, 56, 140, .18);
+  --plp-lg-panel-shadow: inset 1px 0 0 rgba(255, 255, 255, .90), inset -1px 0 0 rgba(123, 56, 140, .16), inset 0 1px 0 rgba(255, 255, 255, .85);
+  --plp-lg-control: rgba(255, 250, 253, .44);
+  --plp-lg-control-shadow: 0 2px 5px rgba(70, 17, 92, .06), inset 0 1px 0 rgba(255, 255, 255, .80);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 255, 255, .80), rgba(243, 217, 241, .64), rgba(253, 238, 249, .82));
+  --plp-lg-row-shadow: inset 0 1px 0 rgba(255, 255, 255, .96), inset 0 -1px 0 rgba(224, 44, 145, .15), 0 2px 5px rgba(70, 17, 92, .08);
+}
+.theme-dark {
+  --plp-lg-ambient: radial-gradient(ellipse at 6% 14%, rgba(255, 46, 149, .15), transparent 58%),
+    radial-gradient(ellipse at 95% 75%, rgba(157, 99, 223, .20), transparent 58%);
+  --plp-lg-panel: linear-gradient(155deg, rgba(92, 57, 100, .64), rgba(42, 12, 53, .72) 48%, rgba(70, 24, 87, .62));
+  --plp-lg-panel-fallback: #26102F;
+  --plp-lg-chrome: linear-gradient(115deg, rgba(87, 46, 92, .75), rgba(35, 11, 48, .86), rgba(82, 36, 88, .70));
+  --plp-lg-edge: rgba(255, 193, 234, .23);
+  --plp-lg-panel-shadow: inset 1px 0 0 rgba(255, 232, 248, .24), inset -1px 0 0 rgba(229, 149, 223, .23), inset 0 1px 0 rgba(255, 232, 248, .25);
+  --plp-lg-control: rgba(255, 221, 245, .08);
+  --plp-lg-control-shadow: 0 2px 6px rgba(0, 0, 0, .20), inset 0 1px 0 rgba(255, 234, 249, .19);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 221, 247, .21), rgba(221, 82, 173, .24), rgba(177, 104, 210, .21));
+  --plp-lg-row-shadow: inset 0 1px 0 rgba(255, 235, 251, .40), inset 0 -1px 0 rgba(255, 46, 149, .23), 0 2px 6px rgba(0, 0, 0, .18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-light, .theme-dark {
+    --plp-lg-time-panel: 0ms;
+    --plp-lg-panel-travel: 0px;
+    --plp-lg-scale-control: 1;
+    --plp-lg-scale-row: 1;
+  }
+}
+
+
+/* Module: src/liquid-glass-chrome.css */
+/* Main interface chrome — requires foundation. Obsidian 1.14.4 desktop.
+   No width/display/overflow overrides on sidedocks: native sizing owns them. */
+body:not(.is-mobile) .workspace {
+  background-color: var(--background-primary);
+  background-image: var(--plp-lg-ambient);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock {
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs,
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-container {
+  background-color: transparent;
+}
+/* Let only the identified native utility views reveal the parent panel.
+   Third-party view interiors keep their own background decisions. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf:has(> .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"])),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"]),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"]) > .view-content {
+  background-color: transparent;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header-container {
+  background: var(--plp-lg-chrome);
+  box-shadow: inset 0 -1px 0 var(--plp-lg-edge);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-sidedock-vault-profile {
+  background: var(--plp-lg-chrome);
+  border-top-color: var(--plp-lg-edge);
+}
+body:not(.is-mobile) .workspace-ribbon.mod-primary,
+body:not(.is-mobile) .workspace-ribbon.mod-primary.is-collapsed {
+  background: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  border-inline-end-color: var(--plp-lg-edge);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+body:not(.is-mobile) .workspace-ribbon.mod-primary::before {
+  background: var(--plp-lg-chrome);
+  /* Retain native window drag behavior on this region. */
+}
+body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+  background-color: var(--background-primary);
+  background-image: var(--plp-lg-chrome);
+  box-shadow: inset 0 -1px 0 var(--plp-lg-edge);
+}
+body:not(.is-mobile) .status-bar {
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  border-color: var(--plp-lg-edge);
+  box-shadow: inset 0 1px 0 var(--plp-lg-rim-low), 0 -2px 8px rgba(0, 0, 0, .06);
+  /* Keep native height, padding, positioning and hit regions. */
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  /* Ribbon blur would re-anchor its native absolute titlebar pseudo-element
+     onto the ribbon, covering its first buttons. Use layered material there. */
+  body:not(.is-mobile) .workspace-split.mod-sidedock {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+  }
+  body:not(.is-mobile) .status-bar {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-status));
+    backdrop-filter: blur(var(--plp-lg-blur-status));
+  }
+}
+
+
+/* Module: src/liquid-glass-motion.css */
+/* Main interface motion — uses installed 1.14.4 native collapse state.
+   Obsidian owns width (140ms), display, minWidth, overflow and resize callbacks.
+   CSS only animates direct panel content. No JS/plugin dependency. */
+body:not(.is-mobile) .workspace-split.mod-sidedock.mod-primary-split { --plp-lg-panel-shift: calc(-1 * var(--plp-lg-panel-travel)); }
+body:not(.is-mobile) .workspace-split.mod-sidedock.mod-secondary-split { --plp-lg-panel-shift: var(--plp-lg-panel-travel); }
+body.mod-rtl:not(.is-mobile) .workspace-split.mod-sidedock.mod-primary-split { --plp-lg-panel-shift: var(--plp-lg-panel-travel); }
+body.mod-rtl:not(.is-mobile) .workspace-split.mod-sidedock.mod-secondary-split { --plp-lg-panel-shift: calc(-1 * var(--plp-lg-panel-travel)); }
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity var(--plp-lg-time-panel) var(--plp-lg-ease-state),
+    translate var(--plp-lg-time-panel) var(--plp-lg-ease-state);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-tabs {
+  opacity: 0;
+  translate: var(--plp-lg-panel-shift) 0;
+}
+/* Native display:none -> show has no prior render. Starting-style supplies one.
+   Older Chromium still gets collapse feedback and native width animation. */
+@starting-style {
+  body:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-tabs {
+    opacity: 0;
+    translate: var(--plp-lg-panel-shift) 0;
+  }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace-split.mod-sidedock > .workspace-tabs,
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs { transition: none; }
+  /* This affects our content motion, not host JS-driven width/folder height. */
+}
+
+
+/* Module: src/liquid-glass-navigation.css */
+/* Main-interface navigation — requires foundation; no content-wide selectors.
+   Individual scale preserves native transforms, including mirrored right toggle. */
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+body:not(.is-mobile) .mod-root .view-header .view-action,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon {
+  border-radius: var(--plp-lg-radius-control);
+  background-color: var(--plp-lg-control);
+  box-shadow: var(--plp-lg-control-shadow);
+  color: var(--text-normal);
+  transition: scale var(--plp-lg-time-release) var(--plp-lg-ease-release),
+    background-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    box-shadow var(--plp-lg-time-state) var(--plp-lg-ease-state), color var(--plp-lg-time-fast) ease;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover {
+  background-color: var(--plp-lg-hover-tint);
+  box-shadow: var(--plp-lg-row-shadow);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active {
+  scale: var(--plp-lg-scale-control);
+  box-shadow: var(--plp-lg-shadow-press);
+  transition-duration: var(--plp-lg-time-press);
+  transition-timing-function: ease-out;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 2px;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .mod-root .view-header .view-action:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled) {
+  opacity: .45;
+  box-shadow: none;
+  cursor: default;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button.is-active {
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title {
+  border-radius: var(--plp-lg-radius-control);
+  transition: background-color var(--plp-lg-time-state) ease,
+    box-shadow var(--plp-lg-time-state) ease, color var(--plp-lg-time-fast) ease,
+    scale var(--plp-lg-time-release) var(--plp-lg-ease-release);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:not(.is-active):not(.is-selected):hover,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:not(.is-active):not(.is-selected):hover {
+  background-color: var(--plp-lg-subtle);
+  box-shadow: inset 0 1px 0 var(--plp-lg-rim-low);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:is(.is-active, .is-selected),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:is(.is-active, .is-selected) {
+  background-color: var(--plp-lg-control);
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow), inset 3px 0 0 var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:not(:has(input)):active,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:not(:has(input)):active {
+  scale: var(--plp-lg-scale-row);
+  transition-duration: var(--plp-lg-time-press);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title.is-being-dragged-over,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title.is-being-dragged-over {
+  box-shadow: inset 0 0 0 2px var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title .collapse-icon svg.svg-icon {
+  transition: transform var(--plp-lg-time-fast) var(--plp-lg-ease-state);
+  /* Native is-collapsed rotation and detached child-height animation retained. */
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable {
+  transition: background-color var(--plp-lg-time-fast) ease, color var(--plp-lg-time-fast) ease;
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable:hover {
+  background-color: var(--plp-lg-subtle);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Side-panel tabs are compact controls: retain native dimensions and hit boxes. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header .workspace-tab-header-inner {
+  border-radius: var(--plp-lg-radius-control);
+  transition: background-color var(--plp-lg-time-state) ease, box-shadow var(--plp-lg-time-state) ease;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: var(--plp-lg-subtle);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:focus-within {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Never shrink native drag targets while grabbing. */
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:active,
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:active {
+  scale: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+body:not(.is-mobile) .mod-root .view-header .view-action,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header .workspace-tab-header-inner,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title .collapse-icon svg.svg-icon,
+  body:not(.is-mobile) .status-bar-item.mod-clickable { transition: none; }
+}
+
+
+/* Module: src/liquid-glass-scroll.css */
+/* PLP scroll glass — real Markdown header overlap. Replaces the lower band.
+   Requires foundation; desktop, visible headers, non-stacked main panes.
+   Header itself samples the text behind it; no decorative overlay below it.
+   Initial inset below the toolbar is preserved with a header-height spacer.
+   Find/replace, print, screenshots and no-blur engines use native layout. */
+.theme-light {
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 250, 253, .48), rgba(249, 239, 253, .26), rgba(255, 250, 253, .42));
+}
+.theme-dark {
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(45, 15, 57, .48), rgba(20, 3, 31, .30), rgba(49, 15, 58, .42));
+}
+@media screen {
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-header {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: 0;
+      height: var(--header-height);
+      z-index: 10;
+      background-color: transparent;
+      background-image: var(--plp-lg-header-glass);
+      -webkit-backdrop-filter: blur(var(--plp-lg-blur-header, 14px)) saturate(var(--plp-lg-saturation-header, 1.15));
+      backdrop-filter: blur(var(--plp-lg-blur-header, 14px)) saturate(var(--plp-lg-saturation-header, 1.15));
+      box-shadow: inset 0 1px 0 var(--plp-lg-rim-low), inset 0 -1px 0 var(--plp-lg-edge);
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-content {
+      height: 100%;
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view,
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller {
+      scroll-padding-top: calc(var(--header-height) + 8px);
+    }
+    /* More specific than the existing 40px !important layout rule. No horizontal
+       geometry changes. Do not pad .cm-content or mutate CodeMirror line boxes. */
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view.is-readable-line-width > .markdown-preview-sizer,
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6.is-readable-line-width:not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller > .cm-sizer {
+      padding-top: calc(40px + var(--header-height)) !important;
+    }
+    /* Native unrestricted-width views use --file-margins rather than PLP's
+       explicit 40px sizer padding; keep their initial top space as well. */
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view:not(.is-readable-line-width) {
+      padding-top: calc(var(--header-height) + var(--file-margins));
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6:not(.is-readable-line-width):not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller > .cm-sizer {
+      padding-top: var(--header-height);
+    }
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-header {
+    background: var(--background-primary);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+
+/* Module: src/liquid-glass-transparency.css */
+/* PLP transparency refinement — requires foundation + chrome.
+   Load after foundation. Independent switch; no editor geometry changes. */
+.theme-light:not(.is-mobile), .theme-dark:not(.is-mobile) {
+  --plp-lg-blur-panel: 4px; /* Match the main top chrome. */
+  --plp-lg-blur-status: 4px;
+  --plp-lg-blur-interactive: 6px;
+  --plp-lg-blur-header: 4px;
+  --plp-lg-saturation: 105%;
+  --plp-lg-saturation-header: 1.05;
+}
+.theme-light:not(.is-mobile) {
+  --plp-lg-panel: var(--plp-lg-chrome);
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 255, 255, .08), rgba(253, 249, 255, .03), rgba(255, 250, 253, .05));
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 255, 255, .07), rgba(253, 249, 255, .025), rgba(255, 250, 253, .045));
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 255, 255, .25) 0%, rgba(255, 250, 253, .12) 39%,
+    rgba(249, 242, 253, .08) 74%, rgba(255, 255, 255, .18) 100%);
+  --plp-lg-control: rgba(255, 250, 253, .035);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 255, 255, .18), rgba(253, 242, 252, .09), rgba(255, 250, 253, .14));
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .22), transparent 40%, rgba(255, 255, 255, .06));
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-panel: var(--plp-lg-chrome);
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 250, 253, .045), rgba(255, 250, 253, .012), rgba(244, 230, 251, .025));
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 250, 253, .035), rgba(255, 250, 253, .01), rgba(244, 230, 251, .025));
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 250, 253, .14) 0%, rgba(239, 225, 249, .06) 30%,
+    rgba(255, 46, 149, .07) 60%, rgba(223, 197, 240, .05) 82%, rgba(255, 250, 253, .09) 100%);
+  --plp-lg-control: rgba(255, 250, 253, .018);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 250, 253, .085), rgba(255, 221, 247, .035), rgba(234, 213, 250, .055));
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .18), transparent 40%, rgba(255, 250, 253, .04));
+}
+/* Readable sidebar glass: soften the underlying note, keep foreground sharp.
+   Override tokens on sidedocks only; ribbon/status/header materials stay put. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-blur-panel: 12px;
+}
+.theme-light:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-panel: linear-gradient(115deg, rgba(255, 255, 255, .24), rgba(255, 250, 253, .16), rgba(253, 248, 255, .20));
+}
+.theme-dark:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-panel: linear-gradient(115deg, rgba(13, 0, 20, .28), rgba(20, 3, 31, .20), rgba(23, 5, 33, .24));
+}
+@media (prefers-reduced-transparency: reduce) {
+  .theme-light:not(.is-mobile) .workspace > .workspace-split.mod-sidedock,
+  .theme-dark:not(.is-mobile) .workspace > .workspace-split.mod-sidedock { --plp-lg-panel: none; }
+}
+/* Main top chrome still sits beside the scroll viewport. This reveals the
+   internal workspace material, not scrolling text or the desktop wallpaper. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+  body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+  body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(4px) saturate(1.05);
+    backdrop-filter: blur(4px) saturate(1.05);
+  }
+}
+/* Solid local surfaces when the OS requests reduced transparency. */
+@media (prefers-reduced-transparency: reduce) {
+  .theme-light:not(.is-mobile), .theme-dark:not(.is-mobile) {
+    --plp-lg-panel: none;
+    --plp-lg-chrome: none;
+    --plp-lg-interactive: none;
+  }
+  body:not(.is-mobile) .workspace-split.mod-sidedock,
+  body:not(.is-mobile) .status-bar {
+    background-color: var(--plp-lg-panel-fallback);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+  body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+  body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+    background-color: var(--background-primary);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+    background-color: var(--plp-lg-fallback);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+
+/* Module: src/liquid-glass-filetree.css */
+/* PLP native file tree refinement — foundation + navigation + chrome.
+   Desktop sidedock file-explorer only. No plugin, markup or path rules.
+   Keep native indentation, child mounting/height animation, drop indicators,
+   editable text and truncation. Existing icons only; dots are decoration. */
+.theme-light:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --plp-lg-tree-text: rgba(70, 17, 92, .88);
+  --plp-lg-tree-icon: rgba(90, 50, 111, .76);
+  --plp-lg-tree-guide: rgba(123, 56, 140, .22);
+  --plp-lg-tree-guide-active: rgba(224, 44, 145, .38);
+  --plp-lg-tree-dot: rgba(200, 69, 151, .60);
+  --plp-lg-tree-hover: linear-gradient(110deg, rgba(255, 255, 255, .46), rgba(246, 235, 251, .24));
+  --plp-lg-tree-selected: linear-gradient(110deg, rgba(224, 44, 145, .07), rgba(166, 106, 194, .09));
+  --plp-lg-tree-edge: rgba(123, 56, 140, .16);
+  --plp-lg-tree-shadow: 0 2px 6px rgba(70, 17, 92, .07);
+}
+.theme-dark:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --plp-lg-tree-text: rgba(255, 250, 253, .90);
+  --plp-lg-tree-icon: rgba(255, 230, 238, .76);
+  --plp-lg-tree-guide: rgba(229, 178, 223, .25);
+  --plp-lg-tree-guide-active: rgba(255, 94, 175, .48);
+  --plp-lg-tree-dot: rgba(255, 141, 202, .68);
+  --plp-lg-tree-hover: linear-gradient(110deg, rgba(255, 231, 250, .09), rgba(198, 133, 223, .05));
+  --plp-lg-tree-selected: linear-gradient(110deg, rgba(255, 46, 149, .11), rgba(188, 133, 226, .10));
+  --plp-lg-tree-edge: rgba(255, 193, 234, .24);
+  --plp-lg-tree-shadow: 0 2px 6px rgba(0, 0, 0, .20);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --nav-item-padding: 5px 8px 5px 24px;
+  --nav-item-parent-padding: var(--nav-item-padding);
+  --nav-item-margin-bottom: 3px;
+  --nav-indentation-guide-color: var(--plp-lg-tree-guide);
+  --plp-lg-tree-active-inset: 2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container:dir(rtl) {
+  --plp-lg-tree-active-inset: -2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding-block-start: 8px;
+}
+/* Use the host's existing border, width, margin and padding. No extra axis DOM. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-children {
+  border-inline-start-color: var(--plp-lg-tree-guide-active);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title) {
+  border-radius: 8px;
+  color: var(--plp-lg-tree-text);
+}
+/* The old palette makes every folder label magenta. Inherit the row instead. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-folder-title-content {
+  color: inherit;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder:not(.mod-root) > .nav-folder-title:not(.is-being-renamed) > .nav-folder-title-content:not([contenteditable="true"])::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-inline-end: 8px;
+  border-radius: 50%;
+  background-color: var(--plp-lg-tree-dot);
+  vertical-align: middle;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  body:not(.is-mobile):not(.is-grabbing) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over):hover {
+    background-color: transparent;
+    background-image: var(--plp-lg-tree-hover);
+    box-shadow: inset 0 1px 0 var(--plp-lg-rim-low);
+    color: var(--text-normal);
+  }
+}
+/* Multi-selection is quieter than the current document. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-selected:not(.is-active, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background-color: transparent;
+  background-image: var(--plp-lg-tree-selected);
+  box-shadow: inset 0 0 0 1px var(--plp-lg-tree-edge);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active:not(.is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background-color: var(--plp-lg-control);
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-tree-shadow), inset 0 1px 0 var(--plp-lg-rim), inset 0 0 0 1px var(--plp-lg-tree-edge), inset var(--plp-lg-tree-active-inset) 0 0 var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Mouse has-focus must not draw the native pink box. Keyboard focus may
+   live on the scrolling container rather than the highlighted row. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(:focus-visible, .is-being-renamed):not(:has(input, [contenteditable="true"])) {
+  outline: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).has-focus:not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"]:is(:focus-visible, :has(:focus-visible)) .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).has-focus:not(.is-being-renamed) {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Keep existing SVG shapes and native collapse rotation; unify their weight. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .collapse-icon {
+  color: var(--plp-lg-tree-icon);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .collapse-icon svg.svg-icon:not(.right-triangle) {
+  --icon-size: 12px;
+  --icon-stroke: 1.8;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke-width: var(--icon-stroke);
+  color: inherit;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-file-icon .svg-icon {
+  --icon-size: 14px;
+  --icon-stroke: 1.8;
+  color: var(--plp-lg-tree-icon);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):is(.is-active, .has-focus, :focus-visible) :is(.collapse-icon, .nav-file-icon .svg-icon) {
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container {
+  gap: 6px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-action-button .svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.8;
+}
+/* Native rename uses contenteditable, not necessarily an input element. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):is(.is-being-renamed, :has(input, [contenteditable="true"])) {
+  scale: 1;
+  transition: none;
+  background: var(--background-primary);
+  box-shadow: none;
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+  color: var(--text-normal);
+}
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title) {
+  scale: 1;
+}
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background: transparent;
+  box-shadow: none;
+}
+/* Drop/source states win over the glass, including selected+drag combinations. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged {
+  transition: none;
+  scale: 1;
+  background: var(--plp-lg-accent);
+  color: var(--text-on-accent);
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged :is(.nav-folder-title-content, .collapse-icon, .nav-file-icon .svg-icon) {
+  color: var(--text-on-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged-over,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-folder.is-being-dragged-over > .tree-item-self.nav-folder-title {
+  transition: none;
+  background-color: var(--plp-lg-hover-tint);
+  box-shadow: inset 0 0 0 2px var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active:not(.is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+    background-color: var(--plp-lg-panel-fallback);
+    background-image: none;
+  }
+}
+
+
+/* Module: src/liquid-glass-overlay.css */
+/* Desktop glass drawers. Obsidian 1.14.4 owns saved width, 140ms width
+   animation, child minWidth, display and resize callbacks. No runtime script.
+   Host width becomes travel distance; the root stays in the flex layout. */
+body:not(.is-mobile) .workspace {
+  position: relative;
+}
+/* The left sheet travels behind the ribbon; its toggle stays clickable. */
+body:not(.is-mobile) .workspace > .workspace-ribbon.mod-primary {
+  z-index: calc(var(--layer-sidedock) + 1);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  position: absolute;
+  inset-block-start: var(--header-height);
+  inset-block-end: 0;
+  height: calc(100% - var(--header-height));
+  z-index: var(--layer-sidedock);
+  /* Host writes overflow:hidden during animation. Full-width children must
+     extend beyond that shrinking box; workspace clips them at window edges. */
+  overflow: visible !important;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock {
+  inset-inline-start: var(--ribbon-width);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock {
+  inset-inline-end: 0;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+  opacity: 1;
+  visibility: visible;
+  translate: none;
+  transition: none;
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+/* Full saved minWidth is supplied by the host while width animates.
+   Left edge = animated parent width - full child width. Right children already
+   travel with their right-anchored parent's left edge. No separate easing. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock > .workspace-tabs {
+  inset-inline-start: 100%;
+  translate: -100% 0;
+}
+body.mod-rtl:not(.is-mobile) .workspace > .workspace-split.mod-primary-split.mod-sidedock > .workspace-tabs {
+  translate: 100% 0;
+}
+/* Native vault footer is not one of the host's width-frozen tab groups.
+   Reveal it after travel; hide immediately on collapse to avoid squashed text. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile {
+  opacity: 1;
+  transition: opacity 70ms ease-out var(--plp-lg-time-panel);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-sidedock-vault-profile {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+@starting-style {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-sidedock-vault-profile { opacity: 0; }
+}
+/* Host reparents/clones toggle buttons between top tab groups. Take them out
+   of tab flow so that migration cannot stretch the main tab row. */
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button {
+  position: absolute;
+  inset-block-start: 0;
+  margin-inline-start: 0 !important;
+  width: auto !important;
+  z-index: 1;
+}
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button.mod-left {
+  inset-inline-start: var(--size-4-2) !important;
+}
+body:not(.is-mobile) .workspace .workspace-tab-header-container > .sidebar-toggle-button.mod-right {
+  inset-inline-end: calc(var(--size-4-2) + var(--frame-right-space, 0px));
+}
+/* Keep frame/button reservation constant when host moves mod-top-*-space
+   classes on open/close. Also reserve the toggle's hit region. */
+body:not(.is-mobile) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container {
+  padding-inline-start: calc(var(--size-4-2) + max(30px, var(--frame-left-space, 0px)));
+  padding-inline-end: calc(var(--size-4-2) + 30px + var(--frame-right-space, 0px));
+}
+/* Electron drag-region exclusion must stay on the main top row even when
+   the host moves mod-top-*-space to an open drawer below that row. Z-index and
+   DOM hit tests alone do not exclude native window dragging behind the X. */
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::before,
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::before {
+  left: 0;
+  width: var(--frame-left-space, 0px);
+}
+body:is(.mod-windows, .mod-linux).is-hidden-frameless:not(.is-mobile):not(.is-fullscreen) .workspace .mod-root .workspace-tabs.mod-top > .workspace-tab-header-container::after {
+  right: 0;
+  width: var(--frame-right-space, 0px);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-left) {
+  padding-inline-start: 38px;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-right) {
+  padding-inline-end: calc(38px + var(--frame-right-space, 0px));
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs {
+    background-color: var(--plp-lg-panel-fallback);
+    background-image: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile,
+body.is-grabbing:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-sidedock-vault-profile { transition: none; }
+  /* Native JS still drives 140ms travel; CSS adds no separate motion. */
+}
+
+/* Sidedock tabs now sit BELOW the window/title tab row. Its native frame
+   reservations and pseudo hit regions no longer belong on utility tabs. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container {
+  padding-inline-start: var(--tab-container-padding-start);
+  padding-inline-end: var(--tab-container-padding-end);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container::before,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container::after {
+  display: none;
+  pointer-events: none;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-left) { padding-inline-start: 38px; }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container:has(> .sidebar-toggle-button.mod-right) { padding-inline-end: 38px; }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-header-container > .sidebar-toggle-button.mod-right { inset-inline-end: var(--size-4-2); }
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header-container-inner,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header,
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock .workspace-tab-header-inner {
+  -webkit-app-region: no-drag;
+}
+/* Center stays clear. Only a three-pixel inner edge softly scatters light.
+   Decorative layers never intercept search tabs, actions, handles or text. */
+.theme-light:not(.is-mobile) {
+  --plp-lg-glass-glint: rgba(255, 255, 255, .24);
+  --plp-lg-glass-rim: rgba(255, 255, 255, .54);
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-glass-glint: rgba(255, 250, 253, .14);
+  --plp-lg-glass-rim: rgba(255, 250, 253, .30);
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 42%, var(--plp-lg-glass-glint) 49%, transparent 56%);
+  opacity: 0;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-tabs::before {
+  animation: plp-lg-glass-arrive 420ms cubic-bezier(.16, .8, .24, 1) both;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-tabs::before {
+  animation: plp-lg-glass-depart 140ms ease-in both;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock > .workspace-tabs::before { scale: -1 1; }
+@keyframes plp-lg-glass-arrive {
+  0% { translate: -70% 0; opacity: 0; }
+  25% { opacity: .65; }
+  100% { translate: 70% 0; opacity: 0; }
+}
+@keyframes plp-lg-glass-depart {
+  0% { translate: 35% 0; opacity: 0; }
+  35% { opacity: .45; }
+  100% { translate: -65% 0; opacity: 0; }
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 3px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, var(--plp-lg-glass-rim) 28%, transparent 65%, var(--plp-lg-glass-rim));
+  backdrop-filter: blur(.75px) brightness(1.05);
+  opacity: .45;
+  transition: opacity 180ms ease;
+}
+body:not(.is-mobile) .workspace > .workspace-split.mod-secondary-split.mod-sidedock > .workspace-tabs::after { inset-inline-end: auto; inset-inline-start: 0; }
+@media (hover: hover) {
+  body:not(.is-mobile):not(.is-grabbing) .workspace > .workspace-split.mod-sidedock > .workspace-tabs:hover::after { opacity: .85; }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before,
+body.is-grabbing:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before { animation: none; opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock:is(.is-sidedock-collapsed, :not(.is-sidedock-collapsed)) > .workspace-tabs::before { animation: none; opacity: 0; }
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after { transition: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::before,
+  body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock > .workspace-tabs::after { display: none; }
+}
+
+/* Native tab drag paints a large accent-colored drop rectangle, plus optional
+   highlighted leaf/header fills. Use near-background white for these areas;
+   keep text selection, semantic accents and file-tree drop indicators intact. */
+.theme-light:not(.is-mobile) {
+  --plp-lg-drop-surface: rgba(255, 255, 255, .38);
+  --plp-lg-drop-edge: rgba(95, 80, 103, .16);
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-drop-surface: rgba(255, 250, 253, .035);
+  --plp-lg-drop-edge: rgba(255, 250, 253, .16);
+}
+body:not(.is-mobile) .workspace-drop-overlay::before {
+  background-color: var(--plp-lg-drop-surface);
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px var(--plp-lg-drop-edge);
+}
+body:not(.is-mobile) .workspace .workspace-leaf.is-highlighted::before,
+body:not(.is-mobile) .workspace .view-header.is-highlighted::after {
+  background-color: var(--plp-lg-drop-surface);
+}
+body:not(.is-mobile) .drag-ghost.mod-leaf {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .10), inset 0 0 0 1px var(--plp-lg-drop-edge);
+}

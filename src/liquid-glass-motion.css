@@ -1,0 +1,33 @@
+/* Main interface motion — uses installed 1.14.4 native collapse state.
+   Obsidian owns width (140ms), display, minWidth, overflow and resize callbacks.
+   CSS only animates direct panel content. No JS/plugin dependency. */
+body:not(.is-mobile) .workspace-split.mod-sidedock.mod-primary-split { --plp-lg-panel-shift: calc(-1 * var(--plp-lg-panel-travel)); }
+body:not(.is-mobile) .workspace-split.mod-sidedock.mod-secondary-split { --plp-lg-panel-shift: var(--plp-lg-panel-travel); }
+body.mod-rtl:not(.is-mobile) .workspace-split.mod-sidedock.mod-primary-split { --plp-lg-panel-shift: var(--plp-lg-panel-travel); }
+body.mod-rtl:not(.is-mobile) .workspace-split.mod-sidedock.mod-secondary-split { --plp-lg-panel-shift: calc(-1 * var(--plp-lg-panel-travel)); }
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity var(--plp-lg-time-panel) var(--plp-lg-ease-state),
+    translate var(--plp-lg-time-panel) var(--plp-lg-ease-state);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock.is-sidedock-collapsed > .workspace-tabs {
+  opacity: 0;
+  translate: var(--plp-lg-panel-shift) 0;
+}
+/* Native display:none -> show has no prior render. Starting-style supplies one.
+   Older Chromium still gets collapse feedback and native width animation. */
+@starting-style {
+  body:not(.is-mobile) .workspace-split.mod-sidedock:not(.is-sidedock-collapsed) > .workspace-tabs {
+    opacity: 0;
+    translate: var(--plp-lg-panel-shift) 0;
+  }
+}
+body:not(.is-mobile) .app-container.no-transition .workspace-split.mod-sidedock > .workspace-tabs,
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs { transition: none; }
+  /* This affects our content motion, not host JS-driven width/folder height. */
+}

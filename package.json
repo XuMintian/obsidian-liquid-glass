@@ -1,0 +1,11 @@
+{
+  "name": "obsidian-liquid-glass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Build the Obsidian Liquid Glass theme without dependencies.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs --check"
+  }
+}

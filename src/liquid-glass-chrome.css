@@ -1,0 +1,69 @@
+/* Main interface chrome — requires foundation. Obsidian 1.14.4 desktop.
+   No width/display/overflow overrides on sidedocks: native sizing owns them. */
+body:not(.is-mobile) .workspace {
+  background-color: var(--background-primary);
+  background-image: var(--plp-lg-ambient);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock {
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs,
+body:not(.is-mobile) .workspace-split.mod-sidedock > .workspace-tabs > .workspace-tab-container {
+  background-color: transparent;
+}
+/* Let only the identified native utility views reveal the parent panel.
+   Third-party view interiors keep their own background decisions. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf:has(> .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"])),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"]),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content:is([data-type="file-explorer"], [data-type="search"], [data-type="backlink"], [data-type="outgoing-link"], [data-type="tag"], [data-type="bookmarks"], [data-type="outline"]) > .view-content {
+  background-color: transparent;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header-container {
+  background: var(--plp-lg-chrome);
+  box-shadow: inset 0 -1px 0 var(--plp-lg-edge);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-sidedock-vault-profile {
+  background: var(--plp-lg-chrome);
+  border-top-color: var(--plp-lg-edge);
+}
+body:not(.is-mobile) .workspace-ribbon.mod-primary,
+body:not(.is-mobile) .workspace-ribbon.mod-primary.is-collapsed {
+  background: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  border-inline-end-color: var(--plp-lg-edge);
+  box-shadow: var(--plp-lg-panel-shadow);
+}
+body:not(.is-mobile) .workspace-ribbon.mod-primary::before {
+  background: var(--plp-lg-chrome);
+  /* Retain native window drag behavior on this region. */
+}
+body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+  background-color: var(--background-primary);
+  background-image: var(--plp-lg-chrome);
+  box-shadow: inset 0 -1px 0 var(--plp-lg-edge);
+}
+body:not(.is-mobile) .status-bar {
+  background-color: var(--plp-lg-panel-fallback);
+  background-image: var(--plp-lg-panel);
+  border-color: var(--plp-lg-edge);
+  box-shadow: inset 0 1px 0 var(--plp-lg-rim-low), 0 -2px 8px rgba(0, 0, 0, .06);
+  /* Keep native height, padding, positioning and hit regions. */
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  /* Ribbon blur would re-anchor its native absolute titlebar pseudo-element
+     onto the ribbon, covering its first buttons. Use layered material there. */
+  body:not(.is-mobile) .workspace-split.mod-sidedock {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+    backdrop-filter: blur(var(--plp-lg-blur-panel)) saturate(var(--plp-lg-saturation));
+  }
+  body:not(.is-mobile) .status-bar {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(var(--plp-lg-blur-status));
+    backdrop-filter: blur(var(--plp-lg-blur-status));
+  }
+}

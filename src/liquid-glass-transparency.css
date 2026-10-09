@@ -1,0 +1,85 @@
+/* PLP transparency refinement — requires foundation + chrome.
+   Load after foundation. Independent switch; no editor geometry changes. */
+.theme-light:not(.is-mobile), .theme-dark:not(.is-mobile) {
+  --plp-lg-blur-panel: 4px; /* Match the main top chrome. */
+  --plp-lg-blur-status: 4px;
+  --plp-lg-blur-interactive: 6px;
+  --plp-lg-blur-header: 4px;
+  --plp-lg-saturation: 105%;
+  --plp-lg-saturation-header: 1.05;
+}
+.theme-light:not(.is-mobile) {
+  --plp-lg-panel: var(--plp-lg-chrome);
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 255, 255, .08), rgba(253, 249, 255, .03), rgba(255, 250, 253, .05));
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 255, 255, .07), rgba(253, 249, 255, .025), rgba(255, 250, 253, .045));
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 255, 255, .25) 0%, rgba(255, 250, 253, .12) 39%,
+    rgba(249, 242, 253, .08) 74%, rgba(255, 255, 255, .18) 100%);
+  --plp-lg-control: rgba(255, 250, 253, .035);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 255, 255, .18), rgba(253, 242, 252, .09), rgba(255, 250, 253, .14));
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .22), transparent 40%, rgba(255, 255, 255, .06));
+}
+.theme-dark:not(.is-mobile) {
+  --plp-lg-panel: var(--plp-lg-chrome);
+  --plp-lg-chrome: linear-gradient(115deg, rgba(255, 250, 253, .045), rgba(255, 250, 253, .012), rgba(244, 230, 251, .025));
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 250, 253, .035), rgba(255, 250, 253, .01), rgba(244, 230, 251, .025));
+  --plp-lg-interactive: linear-gradient(145deg,
+    rgba(255, 250, 253, .14) 0%, rgba(239, 225, 249, .06) 30%,
+    rgba(255, 46, 149, .07) 60%, rgba(223, 197, 240, .05) 82%, rgba(255, 250, 253, .09) 100%);
+  --plp-lg-control: rgba(255, 250, 253, .018);
+  --plp-lg-selected-row: linear-gradient(110deg, rgba(255, 250, 253, .085), rgba(255, 221, 247, .035), rgba(234, 213, 250, .055));
+  --plp-lg-sheen: linear-gradient(115deg, rgba(255, 255, 255, .18), transparent 40%, rgba(255, 250, 253, .04));
+}
+/* Readable sidebar glass: soften the underlying note, keep foreground sharp.
+   Override tokens on sidedocks only; ribbon/status/header materials stay put. */
+body:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-blur-panel: 12px;
+}
+.theme-light:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-panel: linear-gradient(115deg, rgba(255, 255, 255, .24), rgba(255, 250, 253, .16), rgba(253, 248, 255, .20));
+}
+.theme-dark:not(.is-mobile) .workspace > .workspace-split.mod-sidedock {
+  --plp-lg-panel: linear-gradient(115deg, rgba(13, 0, 20, .28), rgba(20, 3, 31, .20), rgba(23, 5, 33, .24));
+}
+@media (prefers-reduced-transparency: reduce) {
+  .theme-light:not(.is-mobile) .workspace > .workspace-split.mod-sidedock,
+  .theme-dark:not(.is-mobile) .workspace > .workspace-split.mod-sidedock { --plp-lg-panel: none; }
+}
+/* Main top chrome still sits beside the scroll viewport. This reveals the
+   internal workspace material, not scrolling text or the desktop wallpaper. */
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+  body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+  body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(4px) saturate(1.05);
+    backdrop-filter: blur(4px) saturate(1.05);
+  }
+}
+/* Solid local surfaces when the OS requests reduced transparency. */
+@media (prefers-reduced-transparency: reduce) {
+  .theme-light:not(.is-mobile), .theme-dark:not(.is-mobile) {
+    --plp-lg-panel: none;
+    --plp-lg-chrome: none;
+    --plp-lg-interactive: none;
+  }
+  body:not(.is-mobile) .workspace-split.mod-sidedock,
+  body:not(.is-mobile) .status-bar {
+    background-color: var(--plp-lg-panel-fallback);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  body:not(.is-mobile) .mod-root .workspace-tab-header-container,
+  body:not(.is-mobile) .mod-root .workspace-leaf .view-header,
+  body:not(.is-mobile) .mod-root .workspace-leaf.mod-active .view-header {
+    background-color: var(--background-primary);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active,
+  .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active:hover {
+    background-color: var(--plp-lg-fallback);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

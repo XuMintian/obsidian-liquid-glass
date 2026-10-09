@@ -1,0 +1,55 @@
+/* PLP scroll glass — real Markdown header overlap. Replaces the lower band.
+   Requires foundation; desktop, visible headers, non-stacked main panes.
+   Header itself samples the text behind it; no decorative overlay below it.
+   Initial inset below the toolbar is preserved with a header-height spacer.
+   Find/replace, print, screenshots and no-blur engines use native layout. */
+.theme-light {
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(255, 250, 253, .48), rgba(249, 239, 253, .26), rgba(255, 250, 253, .42));
+}
+.theme-dark {
+  --plp-lg-header-glass: linear-gradient(115deg, rgba(45, 15, 57, .48), rgba(20, 3, 31, .30), rgba(49, 15, 58, .42));
+}
+@media screen {
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-header {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline: 0;
+      height: var(--header-height);
+      z-index: 10;
+      background-color: transparent;
+      background-image: var(--plp-lg-header-glass);
+      -webkit-backdrop-filter: blur(var(--plp-lg-blur-header, 14px)) saturate(var(--plp-lg-saturation-header, 1.15));
+      backdrop-filter: blur(var(--plp-lg-blur-header, 14px)) saturate(var(--plp-lg-saturation-header, 1.15));
+      box-shadow: inset 0 1px 0 var(--plp-lg-rim-low), inset 0 -1px 0 var(--plp-lg-edge);
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-content {
+      height: 100%;
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view,
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller {
+      scroll-padding-top: calc(var(--header-height) + 8px);
+    }
+    /* More specific than the existing 40px !important layout rule. No horizontal
+       geometry changes. Do not pad .cm-content or mutate CodeMirror line boxes. */
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view.is-readable-line-width > .markdown-preview-sizer,
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6.is-readable-line-width:not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller > .cm-sizer {
+      padding-top: calc(40px + var(--header-height)) !important;
+    }
+    /* Native unrestricted-width views use --file-margins rather than PLP's
+       explicit 40px sizer padding; keep their initial top space as well. */
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-reading-view:not(.is-searching) > .markdown-preview-view:not(.is-readable-line-width) {
+      padding-top: calc(var(--header-height) + var(--file-margins));
+    }
+    body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"] > .view-content > .markdown-source-view.mod-cm6:not(.is-readable-line-width):not(.is-searching):not(.is-replacing) > .cm-editor > .cm-scroller > .cm-sizer {
+      padding-top: var(--header-height);
+    }
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body.show-view-header:not(.is-mobile):not(.is-screenshotting) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content[data-type="markdown"]:has(> .view-content > :is(.markdown-reading-view:not(.is-searching), .markdown-source-view.mod-cm6:not(.is-searching):not(.is-replacing))) > .view-header {
+    background: var(--background-primary);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

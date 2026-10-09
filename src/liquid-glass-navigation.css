@@ -1,0 +1,154 @@
+/* Main-interface navigation — requires foundation; no content-wide selectors.
+   Individual scale preserves native transforms, including mirrored right toggle. */
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+body:not(.is-mobile) .mod-root .view-header .view-action,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon {
+  border-radius: var(--plp-lg-radius-control);
+  background-color: var(--plp-lg-control);
+  box-shadow: var(--plp-lg-control-shadow);
+  color: var(--text-normal);
+  transition: scale var(--plp-lg-time-release) var(--plp-lg-ease-release),
+    background-color var(--plp-lg-time-state) var(--plp-lg-ease-state),
+    box-shadow var(--plp-lg-time-state) var(--plp-lg-ease-state), color var(--plp-lg-time-fast) ease;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):hover {
+  background-color: var(--plp-lg-hover-tint);
+  box-shadow: var(--plp-lg-row-shadow);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):active {
+  scale: var(--plp-lg-scale-control);
+  box-shadow: var(--plp-lg-shadow-press);
+  transition-duration: var(--plp-lg-time-press);
+  transition-timing-function: ease-out;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .mod-root .view-header .view-action:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:not(.is-disabled):not([aria-disabled="true"]):not(:disabled):focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: 2px;
+}
+body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .mod-root .view-header .view-action:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled),
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon:is(.is-disabled, [aria-disabled="true"], :disabled) {
+  opacity: .45;
+  box-shadow: none;
+  cursor: default;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button.is-active {
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title {
+  border-radius: var(--plp-lg-radius-control);
+  transition: background-color var(--plp-lg-time-state) ease,
+    box-shadow var(--plp-lg-time-state) ease, color var(--plp-lg-time-fast) ease,
+    scale var(--plp-lg-time-release) var(--plp-lg-ease-release);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:not(.is-active):not(.is-selected):hover,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:not(.is-active):not(.is-selected):hover {
+  background-color: var(--plp-lg-subtle);
+  box-shadow: inset 0 1px 0 var(--plp-lg-rim-low);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:is(.is-active, .is-selected),
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:is(.is-active, .is-selected) {
+  background-color: var(--plp-lg-control);
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow), inset 3px 0 0 var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:not(:has(input)):active,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:not(:has(input)):active {
+  scale: var(--plp-lg-scale-row);
+  transition-duration: var(--plp-lg-time-press);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title.is-being-dragged-over,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title.is-being-dragged-over {
+  box-shadow: inset 0 0 0 2px var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title .collapse-icon svg.svg-icon {
+  transition: transform var(--plp-lg-time-fast) var(--plp-lg-ease-state);
+  /* Native is-collapsed rotation and detached child-height animation retained. */
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable {
+  transition: background-color var(--plp-lg-time-fast) ease, color var(--plp-lg-time-fast) ease;
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable:hover {
+  background-color: var(--plp-lg-subtle);
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .status-bar-item.mod-clickable:focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Side-panel tabs are compact controls: retain native dimensions and hit boxes. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header .workspace-tab-header-inner {
+  border-radius: var(--plp-lg-radius-control);
+  transition: background-color var(--plp-lg-time-state) ease, box-shadow var(--plp-lg-time-state) ease;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header.is-active {
+  background: transparent;
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header.is-active .workspace-tab-header-inner {
+  background: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-row-shadow);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  background-color: var(--plp-lg-subtle);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:focus-visible,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header:focus-within {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Never shrink native drag targets while grabbing. */
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title:active,
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title:active {
+  scale: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.is-mobile) .workspace-ribbon .side-dock-ribbon-action,
+body:not(.is-mobile) .mod-root .view-header .view-action,
+body:not(.is-mobile) .mod-root .view-header-nav-buttons .clickable-icon,
+body:not(.is-mobile) .workspace-split.mod-sidedock .nav-action-button,
+body:not(.is-mobile) .workspace-tab-header-new-tab .clickable-icon,
+body:not(.is-mobile) .workspace-tab-header-tab-list .clickable-icon,
+body:not(.is-mobile) .sidebar-toggle-button .clickable-icon,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-file-title,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-tab-header .workspace-tab-header-inner,
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder-title .collapse-icon svg.svg-icon,
+  body:not(.is-mobile) .status-bar-item.mod-clickable { transition: none; }
+}

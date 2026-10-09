@@ -1,0 +1,45 @@
+/* 02 — Balanced, responsive writing area for Obsidian
+   Inspired by the centered, controlled line lengths of Markdown editors.
+   Replaces the earlier left-aligned layout snippet.
+   Does not alter colors, fonts, font sizes, or line spacing.
+*/
+
+.theme-light,
+.theme-dark {
+  /* Total maximum editor width, including the inner horizontal padding. */
+  --obs-layout-width: 1040px;
+
+  /* Responsive inner gutters: never less than 18px or more than 36px. */
+  --obs-layout-gutter: clamp(18px, 2.5vw, 36px);
+
+  /* Keep Obsidian's readable-line-length mechanism in sync. */
+  --file-line-width: var(--obs-layout-width);
+
+  /* Prevent native file padding from stacking with our explicit padding. */
+  --file-margins: 0px;
+}
+
+/* Live Preview / Source editor and Reading View use the same geometry. */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: var(--obs-layout-width) !important;
+
+  /* CENTER the writing area: don't leave all extra space on the right. */
+  margin-inline: auto !important;
+  transform: none !important;
+
+  /* A single, predictable layer of padding. */
+  padding-top: 40px !important;
+  padding-inline: var(--obs-layout-gutter) !important;
+  padding-bottom: 56px !important;
+}
+
+/* In very narrow Obsidian windows, preserve usable writing space. */
+@media (max-width: 700px) {
+  .theme-light,
+  .theme-dark {
+    --obs-layout-gutter: 16px;
+  }
+}

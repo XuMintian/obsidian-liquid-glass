@@ -1,0 +1,182 @@
+/* Obsidian unified theme: light + dark */
+/* Light: #FFFAFD background, #46115C text; Dark: #0D0014 background, #FFFAFD text, #FF2E95 accent */
+
+/* ========== LIGHT MODE ========== */
+.theme-light {
+  --background-primary: #FFFAFD;
+  --background-secondary: #FFFAFD;
+  --background-primary-alt: #FFFAFD;
+  --background-secondary-alt: #FFFAFD;
+  --titlebar-background: #FFFAFD;
+  --titlebar-background-focused: #FFFAFD;
+  --tab-container-background: #FFFAFD;
+  --text-normal: #46115C;
+  --text-muted: #46115C;
+  --text-faint: #46115C;
+  --interactive-accent: #E02C91;
+  --interactive-accent-hover: #C5227B;
+  --text-accent: #E02C91;
+  --text-accent-hover: #C5227B;
+  --color-accent: #E02C91;
+  --h1-color: #46115C;
+  --h2-color: #64277B;
+  --h3-color: #824394;
+  --h4-color: #A061AD;
+  --h5-color: #B781C0;
+  --h6-color: #CBA0D0;
+  --link-color: #D12B7F;
+  --link-color-hover: #D12B7F;
+  --link-external-color: #D12B7F;
+  --link-external-color-hover: #D12B7F;
+  --link-unresolved-color: #D12B7F;
+  --bold-color: #E02C91;
+  --italic-color: #E02C91;
+  --text-highlight-bg: #FFF0C2;
+  --blockquote-border-color: #E02C91;
+  --hr-color: #E02C91;
+  --table-border-color: #E02C9170;
+  --background-modifier-hover: #E02C9114;
+  --background-modifier-border: #E02C9138;
+  --background-modifier-border-hover: #E02C9170;
+  --background-modifier-border-focus: #E02C91;
+  --checkbox-color: #E02C91;
+  --checkbox-color-hover: #E02C91;
+  --checkbox-border-color: #E02C91;
+  --list-marker-color: #E02C91;
+  --list-marker-color-hover: #E02C91;
+  --list-marker-color-collapsed: #E02C91;
+  --text-selection: var(--plp-lg-selection, rgba(255, 255, 102, .30));
+  --icon-color: #46115C;
+  --icon-color-hover: #E02C91;
+  --icon-color-active: #E02C91;
+  --icon-color-focused: #E02C91;
+}
+
+/* ========== DARK MODE ========== */
+.theme-dark {
+  --background-primary: #0D0014;
+  --background-secondary: #0D0014;
+  --background-primary-alt: #0D0014;
+  --background-secondary-alt: #0D0014;
+  --titlebar-background: #0D0014;
+  --titlebar-background-focused: #0D0014;
+  --tab-container-background: #0D0014;
+  --text-normal: #FFFAFD;
+  --text-muted: #FFFAFD;
+  --text-faint: #FFFAFD;
+  /* Lightened headings for visibility against the deep-purple background */
+  --interactive-accent: #FF2E95;
+  --interactive-accent-hover: #FF65B8;
+  --text-accent: #FF2E95;
+  --text-accent-hover: #FF65B8;
+  --color-accent: #FF2E95;
+  --h1-color: #FFFAFD;
+  --h2-color: #FCE4F5;
+  --h3-color: #F8C9EB;
+  --h4-color: #F4AFE0;
+  --h5-color: #ED91D0;
+  --h6-color: #E67BBD;
+  /* Vivid dark-mode accent; lighter hover state */
+  --link-color: #FF2E95;
+  --link-color-hover: #FF65B8;
+  --link-external-color: #FF2E95;
+  --link-external-color-hover: #FF65B8;
+  --link-unresolved-color: #FF2E95;
+  --bold-color: #FF2E95;
+  --italic-color: #FF2E95;
+  --text-highlight-bg: #FF2E9559;
+  --blockquote-border-color: #FF2E95;
+  --hr-color: #FF2E95;
+  --table-border-color: #FF2E9580;
+  --background-modifier-hover: #FF2E9529;
+  --background-modifier-border: #FF2E9552;
+  --background-modifier-border-hover: #FF2E958A;
+  --background-modifier-border-focus: #FF2E95;
+  --checkbox-color: #FF2E95;
+  --checkbox-color-hover: #FF2E95;
+  --checkbox-border-color: #FF2E95;
+  --list-marker-color: #FF2E95;
+  --list-marker-color-hover: #FF2E95;
+  --list-marker-color-collapsed: #FF2E95;
+  --text-selection: var(--plp-lg-selection, rgba(255, 255, 102, .40));
+  --icon-color: #FFFAFD;
+  --icon-color-hover: #FF2E95;
+  --icon-color-active: #FF2E95;
+  --icon-color-focused: #FF2E95;
+}
+
+/* ========== SHARED DETAIL RULES ========== */
+.theme-light :not(pre) > code,
+.theme-light .cm-inline-code {
+  background-color: #FFFAFD;
+}
+.theme-dark :not(pre) > code,
+.theme-dark .cm-inline-code {
+  background-color: #FF2E9520;
+}
+.theme-light .markdown-rendered pre,
+.theme-light .HyperMD-codeblock {
+  background-color: #FF00990C !important;
+}
+.theme-dark .markdown-rendered pre,
+.theme-dark .HyperMD-codeblock {
+  background-color: #FF2E951A !important;
+}
+.theme-light .markdown-rendered blockquote {
+  border-left-color: #E02C91;
+}
+.theme-dark .markdown-rendered blockquote {
+  border-left-color: #FF2E95;
+}
+.theme-light .markdown-rendered hr {
+  border-color: #E02C91;
+}
+.theme-dark .markdown-rendered hr {
+  border-color: #FF2E95;
+}
+.theme-light .markdown-rendered ol > li::marker {
+  color: #E02C91;
+}
+.theme-dark .markdown-rendered ol > li::marker {
+  color: #FF2E95;
+}
+.theme-light .cm-formatting-list-ol {
+  color: #E02C91 !important;
+}
+.theme-dark .cm-formatting-list-ol {
+  color: #FF2E95 !important;
+}
+.theme-light .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 #E02C91;
+}
+.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 -2px 0 #FF2E95;
+}
+.theme-light .workspace-tab-header.is-active { background-color: #FFFAFD; }
+.theme-dark .workspace-tab-header.is-active { background-color: #0D0014; }
+.theme-light .workspace-tab-header.is-active .workspace-tab-header-inner-title { color: #46115C; }
+.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-title { color: #FFFAFD; }
+.theme-light .nav-file-title.is-active { background-color: #E02C9126; }
+.theme-dark .nav-file-title.is-active { background-color: #FF2E9526; }
+.theme-light .nav-file-title.is-active { color: #46115C; }
+.theme-dark .nav-file-title.is-active { color: #FFFAFD; }
+.theme-light .nav-folder-title-content,
+.theme-light .nav-folder-collapse-indicator { color: #E02C91; }
+.theme-dark .nav-folder-title-content,
+.theme-dark .nav-folder-collapse-indicator { color: #FF2E95; }
+.theme-light ::-webkit-scrollbar-thumb {
+  background-color: #E02C9170;
+  border-radius: 8px;
+}
+.theme-dark ::-webkit-scrollbar-thumb {
+  background-color: #FF2E9570;
+  border-radius: 8px;
+}
+.theme-light ::-webkit-scrollbar-thumb:hover { background-color: #E02C91A0; }
+.theme-dark ::-webkit-scrollbar-thumb:hover { background-color: #FF2E95A0; }
+.theme-light ::-webkit-scrollbar-track { background-color: #FFFAFD; }
+.theme-dark ::-webkit-scrollbar-track { background-color: #0D0014; }
+.theme-light .cm-editor .cm-content { caret-color: #E02C91; }
+.theme-dark .cm-editor .cm-content { caret-color: #FF2E95; }
+.theme-light .cm-editor .cm-cursor { border-left-color: #E02C91 !important; }
+.theme-dark .cm-editor .cm-cursor { border-left-color: #FF2E95 !important; }

@@ -1,0 +1,36 @@
+/* Obsidian typography — handwriting English, clean Chinese, editorial headings */
+/* Independent snippet: does not change your light/dark palette. */
+.theme-light, .theme-dark {
+  --font-text: "Segoe Print", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --font-interface: "Comic Sans MS", "Microsoft YaHei", sans-serif;
+  --font-monospace: "Cascadia Code", Consolas, "Microsoft YaHei", monospace;
+  --font-text-size: 16px;
+  --line-height-normal: 1.8;
+  --line-height-tight: 1.35;
+  --heading-font: Georgia, "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+}
+/* Editing and reading text */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view .markdown-preview-sizer {
+  font-family: var(--font-text);
+  line-height: 1.8;
+}
+/* Headings in both modes */
+.markdown-rendered :is(h1,h2,h3,h4,h5,h6),
+.markdown-source-view.mod-cm6 :is(.HyperMD-header-1,.HyperMD-header-2,.HyperMD-header-3,.HyperMD-header-4,.HyperMD-header-5,.HyperMD-header-6) {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: .015em;
+  line-height: 1.45;
+}
+.markdown-rendered h1 { margin-block: 1.35em .65em; }
+.markdown-rendered h2 { margin-block: 1.25em .55em; }
+.markdown-rendered :is(h3,h4,h5,h6) { margin-block: 1.1em .45em; }
+.markdown-rendered p { margin-block: .7em; }
+/* Make code genuinely monospaced, regardless of settings. */
+.markdown-rendered :is(code,pre),
+.markdown-source-view.mod-cm6 :is(.cm-inline-code,.HyperMD-codeblock),
+.markdown-rendered pre code {
+  font-family: var(--font-monospace);
+  font-size: .92em;
+}

@@ -1,0 +1,167 @@
+/* PLP native file tree refinement — foundation + navigation + chrome.
+   Desktop sidedock file-explorer only. No plugin, markup or path rules.
+   Keep native indentation, child mounting/height animation, drop indicators,
+   editable text and truncation. Existing icons only; dots are decoration. */
+.theme-light:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --plp-lg-tree-text: rgba(70, 17, 92, .88);
+  --plp-lg-tree-icon: rgba(90, 50, 111, .76);
+  --plp-lg-tree-guide: rgba(123, 56, 140, .22);
+  --plp-lg-tree-guide-active: rgba(224, 44, 145, .38);
+  --plp-lg-tree-dot: rgba(200, 69, 151, .60);
+  --plp-lg-tree-hover: linear-gradient(110deg, rgba(255, 255, 255, .46), rgba(246, 235, 251, .24));
+  --plp-lg-tree-selected: linear-gradient(110deg, rgba(224, 44, 145, .07), rgba(166, 106, 194, .09));
+  --plp-lg-tree-edge: rgba(123, 56, 140, .16);
+  --plp-lg-tree-shadow: 0 2px 6px rgba(70, 17, 92, .07);
+}
+.theme-dark:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --plp-lg-tree-text: rgba(255, 250, 253, .90);
+  --plp-lg-tree-icon: rgba(255, 230, 238, .76);
+  --plp-lg-tree-guide: rgba(229, 178, 223, .25);
+  --plp-lg-tree-guide-active: rgba(255, 94, 175, .48);
+  --plp-lg-tree-dot: rgba(255, 141, 202, .68);
+  --plp-lg-tree-hover: linear-gradient(110deg, rgba(255, 231, 250, .09), rgba(198, 133, 223, .05));
+  --plp-lg-tree-selected: linear-gradient(110deg, rgba(255, 46, 149, .11), rgba(188, 133, 226, .10));
+  --plp-lg-tree-edge: rgba(255, 193, 234, .24);
+  --plp-lg-tree-shadow: 0 2px 6px rgba(0, 0, 0, .20);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] {
+  --nav-item-padding: 5px 8px 5px 24px;
+  --nav-item-parent-padding: var(--nav-item-padding);
+  --nav-item-margin-bottom: 3px;
+  --nav-indentation-guide-color: var(--plp-lg-tree-guide);
+  --plp-lg-tree-active-inset: 2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container:dir(rtl) {
+  --plp-lg-tree-active-inset: -2px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container {
+  padding-block-start: 8px;
+}
+/* Use the host's existing border, width, margin and padding. No extra axis DOM. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder:not(.mod-root):has(.nav-file-title.is-active) > .nav-folder-children {
+  border-inline-start-color: var(--plp-lg-tree-guide-active);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title) {
+  border-radius: 8px;
+  color: var(--plp-lg-tree-text);
+}
+/* The old palette makes every folder label magenta. Inherit the row instead. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-folder-title-content {
+  color: inherit;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-folder:not(.mod-root) > .nav-folder-title:not(.is-being-renamed) > .nav-folder-title-content:not([contenteditable="true"])::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-inline-end: 8px;
+  border-radius: 50%;
+  background-color: var(--plp-lg-tree-dot);
+  vertical-align: middle;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  body:not(.is-mobile):not(.is-grabbing) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over):hover {
+    background-color: transparent;
+    background-image: var(--plp-lg-tree-hover);
+    box-shadow: inset 0 1px 0 var(--plp-lg-rim-low);
+    color: var(--text-normal);
+  }
+}
+/* Multi-selection is quieter than the current document. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-selected:not(.is-active, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background-color: transparent;
+  background-image: var(--plp-lg-tree-selected);
+  box-shadow: inset 0 0 0 1px var(--plp-lg-tree-edge);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active:not(.is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background-color: var(--plp-lg-control);
+  background-image: var(--plp-lg-selected-row);
+  box-shadow: var(--plp-lg-tree-shadow), inset 0 1px 0 var(--plp-lg-rim), inset 0 0 0 1px var(--plp-lg-tree-edge), inset var(--plp-lg-tree-active-inset) 0 0 var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):focus-visible {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Mouse has-focus must not draw the native pink box. Keyboard focus may
+   live on the scrolling container rather than the highlighted row. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(:focus-visible, .is-being-renamed):not(:has(input, [contenteditable="true"])) {
+  outline: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).has-focus:not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"]:is(:focus-visible, :has(:focus-visible)) .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).has-focus:not(.is-being-renamed) {
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+}
+/* Keep existing SVG shapes and native collapse rotation; unify their weight. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .collapse-icon {
+  color: var(--plp-lg-tree-icon);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .collapse-icon svg.svg-icon:not(.right-triangle) {
+  --icon-size: 12px;
+  --icon-stroke: 1.8;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke-width: var(--icon-stroke);
+  color: inherit;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-file-icon .svg-icon {
+  --icon-size: 14px;
+  --icon-stroke: 1.8;
+  color: var(--plp-lg-tree-icon);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):is(.is-active, .has-focus, :focus-visible) :is(.collapse-icon, .nav-file-icon .svg-icon) {
+  color: var(--plp-lg-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container {
+  gap: 6px;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-action-button .svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.8;
+}
+/* Native rename uses contenteditable, not necessarily an input element. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):is(.is-being-renamed, :has(input, [contenteditable="true"])) {
+  scale: 1;
+  transition: none;
+  background: var(--background-primary);
+  box-shadow: none;
+  outline: 2px solid var(--plp-lg-accent);
+  outline-offset: -2px;
+  color: var(--text-normal);
+}
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title) {
+  scale: 1;
+}
+body.is-grabbing:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title):not(.is-active, .is-selected, .is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+  background: transparent;
+  box-shadow: none;
+}
+/* Drop/source states win over the glass, including selected+drag combinations. */
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged {
+  transition: none;
+  scale: 1;
+  background: var(--plp-lg-accent);
+  color: var(--text-on-accent);
+  box-shadow: none;
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged :is(.nav-folder-title-content, .collapse-icon, .nav-file-icon .svg-icon) {
+  color: var(--text-on-accent);
+}
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-being-dragged-over,
+body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .nav-folder.is-being-dragged-over > .tree-item-self.nav-folder-title {
+  transition: none;
+  background-color: var(--plp-lg-hover-tint);
+  box-shadow: inset 0 0 0 2px var(--plp-lg-accent);
+  color: var(--text-normal);
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.is-mobile) .workspace-split.mod-sidedock .workspace-leaf-content[data-type="file-explorer"] .nav-files-container .tree-item-self:is(.nav-file-title, .nav-folder-title).is-active:not(.is-being-renamed, .is-being-dragged, .is-being-dragged-over) {
+    background-color: var(--plp-lg-panel-fallback);
+    background-image: none;
+  }
+}
